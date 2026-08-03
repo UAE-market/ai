@@ -2,6 +2,19 @@
 <html dir="rtl" lang="ar">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script>
+(function(){
+  try {
+    var lang = localStorage.getItem("site_lang");
+    if (lang !== "ar" && lang !== "en") {
+      var host = (location.hostname || "").toLowerCase().replace(/^www\./, "");
+      lang = host.indexOf("eg") === 0 ? "ar" : "en";
+    }
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+  } catch (e) {}
+})();
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WRRCTWHDVF"></script>
     <script>
@@ -15,21 +28,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.1">
     <link rel="stylesheet" href="https://eg-market.github.io/ai/css1.css" data-precedence="next">
     <link rel="stylesheet" href="https://eg-market.github.io/ai/css2.css" data-precedence="next">
-    <title> مصر | أحدث العروض كل بوم من 30 سوبر ماركت، موبايلات، الكترونيات </title>
+    <title data-i18n="page_title">  | أحدث العروض كل يوم من 30 سوبر ماركت،
+      موبايلات، الكترونيات </title>
     <link rel="icon" href="https://eg-market.github.io/ai/integra%20logo_icon.bmp">
   </head>
-  <body class="bg-white text-gray-700 __className_fd82b7">
+  <body class="bg-white text-gray-700 __className_fd82b7"> <button id="lang-toggle-btn"
+
+      onclick="window.toggleSiteLang &amp;&amp; window.toggleSiteLang()" style="position:fixed; top:10px; left:10px; z-index:99999; background:#0b5fa5; color:#fff; border:none; border-radius:20px; padding:6px 16px; font-size:14px; font-weight:bold; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.35); font-family:Arial, sans-serif;">EN</button>
     <div id="t6-wrapper">
       <header class="header">
-        <h1>🛒 سوق الإمارات - U.A.E markets: The first search engine for daily
-          supermarket offers</h1>
+        <h1 data-i18n="header_title">🛒 سوق الإمارات - U.A.E markets: The first
+          search engine for daily supermarket offers</h1>
         <p><br>
         </p>
-        <p>Log in to your account or create one next to the search box to
-          receive the free mobile application</p>
+        <p data-i18n="header_sub1">Log in to your account or create one next to
+          the search box to receive the free mobile application</p>
         <br>
-        <p>Compare prices between Carrefour, Othaim , Lulu and 40 others – save
-          up to 70%</p>
+        <p data-i18n="header_sub2">Compare prices between Carrefour,
+          Lulu and 40 others – save up to 70%</p>
         <div class="header-logos">
           <!-- Carr --> <a href="https://uae-marker.github.io/ai/index_B.html?market=%D9%83%D8%A7%D8%B1%D9%81%D9%88%D8%B1"
 
@@ -514,38 +530,45 @@ font-size: 4em;
                   data-tabindex="0">
                   <div class="shrink-0 overflow-hidden size-[64px] md:size-3xl"><br>
                   </div>
-                  <div class="font-bold pl-2xs overflow-hidden ">Old offers</div>
+                  <div class="font-bold pl-2xs overflow-hidden " data-i18n="old_offers">Old
+                    offers</div>
                 </button> </a> </div>
             <!-- Modal للمستخدم -->
             <div id="user-modal" class="modal" style="display:none;">
               <div class="modal-content" style="width:90%; max-width:1200px; min-height:700px; padding:30px; font-size:3rem;">
                 <span class="close-btn">×</span>
-                <div class="modal-header"> <button id="tab-login" class="tab-button">تسجيل
-                    الدخول --- </button> <button id="tab-signup" class="tab-button active">إنشاء
-                    حساب</button>
+                <div class="modal-header"> <button id="tab-login" class="tab-button"
+
+                    data-i18n="login_tab">تسجيل الدخول --- </button> <button id="tab-signup"
+
+                    class="tab-button active" data-i18n="signup_tab">إنشاء حساب</button>
                   <!-- جعل هذا التبويب نشطاً --> </div>
                 <div id="login-form" class="tab-content">
-                  <h2>-----تسجيل الدخول</h2>
+                  <h2 data-i18n="login_heading">-----تسجيل الدخول</h2>
                   <form id="login"> <input id="login-email" placeholder="البريد الإلكتروني"
 
-                      required="" type="email"> <input id="login-password" placeholder="كلمة المرور"
+                      data-i18n-placeholder="email_placeholder" required="" type="email">
+                    <input id="login-password" placeholder="كلمة المرور" data-i18n-placeholder="password_placeholder"
 
-                      required="" type="password"> <button type="submit">دخول</button>
+                      required="" type="password"> <button type="submit" data-i18n="login_submit">دخول</button>
                   </form>
                   <div id="login-message"></div>
                 </div>
                 <div id="signup-form" class="tab-content">
-                  <h2>إنشاء حساب جديد</h2>
+                  <h2 data-i18n="signup_heading">إنشاء حساب جديد</h2>
                   <form id="signup"> <input id="signup-email" placeholder="البريد الإلكتروني"
 
-                      required="" type="email"> <input id="signup-password" placeholder="كلمة المرور"
+                      data-i18n-placeholder="email_placeholder" required="" type="email">
+                    <input id="signup-password" placeholder="كلمة المرور" data-i18n-placeholder="password_placeholder"
 
                       required="" type="password"> <input id="signup-whatsapp"
 
-                      placeholder="رقم واتساب (اختياري)" type="tel"> <button type="submit"
+                      placeholder="رقم واتساب (اختياري)" data-i18n-placeholder="whatsapp_placeholder"
 
-                      style="font-size: 3rem; padding: 18px 30px;"> اضغط لإنشاء
-                      حساب </button> </form>
+                      type="tel"> <button type="submit" style="font-size: 3rem; padding: 18px 30px;"
+
+                      data-i18n="signup_submit_big"> اضغط لإنشاء حساب </button>
+                  </form>
                   <div id="signup-message"></div>
                 </div>
               </div>
@@ -565,18 +588,20 @@ document.getElementById('login-form').classList.remove('active');
 document.getElementById('signup-form').classList.add('active');
 } </script><a><button class="focus-visible:ring-ring whitespace-nowrap font-bold focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-[0.12] bg-primary text-white duration-300 ease-in-out transition-[height,opacity,margin,flex] p-3 xs transition-height relative flex w-[92px] shrink-0 flex-col items-center justify-center md:border-2 md:w-[60px] md:flex-row md:justify-center rounded-lg"
 
-                  onclick="showModal()" data-tabindex="1" style="height: 72px; font-size: 2rem;">Click
-                  here if you are a new user</button></a><a href="https://uae-marker.github.io/ai/index_B.html"><button
+                  onclick="showModal()" data-tabindex="1" style="height: 72px; font-size: 2rem;"
 
-                  class="focus-visible:ring-ring whitespace-nowrap font-bold focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-[0.12] bg-primary text-white duration-300 ease-in-out transition-[height,opacity,margin,flex] p-3 xs transition-height relative flex w-[92px] shrink-0 flex-col items-center justify-center md:border-2 md:w-[60px] md:flex-row md:justify-center rounded-lg"
+                  data-i18n="new_user_btn">Click here if you are a new user</button></a><a
 
-                  data-tabindex="1" style="height: 72px; font-size: 2rem;">
+                href="https://uae-marker.github.io/ai/index_B.html"><button class="focus-visible:ring-ring whitespace-nowrap font-bold focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-[0.12] bg-primary text-white duration-300 ease-in-out transition-[height,opacity,margin,flex] p-3 xs transition-height relative flex w-[92px] shrink-0 flex-col items-center justify-center md:border-2 md:w-[60px] md:flex-row md:justify-center rounded-lg"
+
+                  data-tabindex="1" style="height: 72px; font-size: 2rem;" data-i18n="todays_offers">
                   Today's offers</button></a></div>
             <div><a href="https://uae-marker.github.io/ai/index_B.html?category=%D8%A3%D8%AC%D9%87%D8%B2%D8%A9+%D8%AA%D9%84%D9%8A%D9%81%D8%B2%D9%8A%D9%88%D9%86+%D9%88%D8%A7%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A7%D8%AA">
                 <button class="focus-visible:ring-ring whitespace-nowrap font-bold focus-visible:outline-none focus-visible:ring-1 
                disabled:pointer-events-none disabled:opacity-[0.12] bg-primary text-white duration-300 ease-in-out transition-[height,opacity,margin,flex]               p-2xs transition-height relative flex w-[72px] shrink-0 flex-col items-center justify-center md:border-2 md:w-[168px] md:flex-row                md:justify-center h-[86px] pb-3xs md:h-3xl rounded-lg">
                   <div class="shrink-0 overflow-hidden size-[64px] md:size-3xl"></div>
-                  <div class="font-bold pl-2xs overflow-hidden "> Mobiles + </div>
+                  <div class="font-bold pl-2xs overflow-hidden " data-i18n="mobiles_plus">
+                    Mobiles + </div>
                 </button></a></div>
           </div>
           <div class="flex w-full flex-col md:flex-row md:items-center">
@@ -592,12 +617,14 @@ document.getElementById('signup-form').classList.add('active');
                       <!-- Increased border width to 4px -->
                       <div class="pointer-events-none absolute right-sm top-1/2 -translate-y-1/2 stroke-0 gap-x-2xs flex"
 
-                        style="color:#a3a3a3; transform: scaleY(2);"> <span class="whitespace-pre-wrap">ابحث</span>
-                        <span class="inline-block animate-fade-in-up"> <span class="whitespace-pre-wrap"></span>
-                          <strong><span class="whitespace-pre-wrap">90,000+</span></strong>
-                          <span class="whitespace-pre-wrap"></span> </span> <span
+                        style="color:#a3a3a3; transform: scaleY(2);"> <span class="whitespace-pre-wrap"
 
-class="whitespace-pre-wrap">صنف</span> </div>
+data-i18n="search_label">ابحث</span> <span class="inline-block animate-fade-in-up">
+                          <span class="whitespace-pre-wrap"></span> <strong><span
+
+class="whitespace-pre-wrap">90,000+</span></strong> <span class="whitespace-pre-wrap"></span>
+                        </span> <span class="whitespace-pre-wrap" data-i18n="search_items">صنف</span>
+                      </div>
                       <button class="focus-visible:ring-ring justify-center whitespace-nowrap rounded-xl font-bold transition-colors 
                                      focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-[0.12]                                     text-primary absolute top-1/2 flex -translate-y-1/2 items-center right-sm"
 
@@ -647,8 +674,7 @@ class="whitespace-pre-wrap">صنف</span> </div>
                     </div>
                   </a> </div>
                 <!-- الصورة 1 
-                 </a>                <div class="w-[calc(50%-0.5rem)] md:w-[calc(25%-1.5rem)] flex justify-center">										  <a  href="https://uae-marker.github.io/ai/index_B.html?category=%D8%A3%D8%B7%D8%B9%D9%85%D8%A9+-+%D8%A3%D8%B3%D9%85%D8%A7%D9%83">
-                  </a><a href="https://eg-market.github.io/ai/tibat.html?products=%D8%A3%D8%B1%D8%B2%2C%D8%A8%D8%B7%D8%A7%D8%B7%D8%B3%2C%D8%B3%D9%83%D8%B1%2C%D8%B3%D9%85%D9%86%20%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A%2C%D8%B2%D8%A8%D8%AF%D9%87%20%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A%2C%D8%B2%D9%8A%D8%AA%20%D8%B2%D9%8A%D8%AA%D9%88%D9%86%2C%D8%B3%D9%85%D8%A7%D9%86%2C%D8%AD%D9%85%D8%A7%D9%85%2C%D8%A7%D8%B1%D8%A7%D9%86%D8%A8%2C%D9%84%D8%AD%D9%85%20%D8%B6%D8%A7%D9%86%D9%8A%2C%D8%AC%D9%85%D9%84%2C%D8%A8%D8%AA%D9%84%D9%88%2C%D9%83%D9%86%D8%AF%D9%88%D8%B2%2C%D9%85%D9%81%D8%B1%D9%88%D9%85%2C%D8%B0%D8%B1%D9%87%2C%D8%B4%D8%B9%D9%8A%D8%B1%2C%D9%81%D8%B1%D9%8A%D9%83%2C%D8%B2%D9%8A%D8%AA%D9%88%D9%86%2C%D9%83%D9%88%D8%B3%D9%87%2C%D8%AA%D9%88%D8%B3%D8%AA%20%D8%A8%D8%A7%D9%84%D8%B1%D8%AF%D9%87%2C%D8%B9%D8%B3%D9%84%20%D9%86%D8%AD%D9%84%2C%D8%B9%D8%B3%D9%84%20%D8%A7%D8%B3%D9%88%D8%AF%2C%D9%85%D8%B1%D8%A8%D9%89%2C%D8%AD%D9%84%D8%A7%D9%88%D9%87%2C%D8%B7%D8%AD%D9%8A%D9%86%D9%87%2C%D9%86%D9%88%D8%AA%D9%8A%D9%84%D8%A7%2C%D9%84%D8%A7%D9%86%D8%B4%D9%88%D9%86%20%D9%85%D8%B9%D9%84%D8%A8%2C%D8%B9%D8%B5%D9%8A%D8%B1%2C%D8%AA%D9%88%D9%86%D8%A9%2C%D8%B1%D9%86%D8%AC%D9%87%2C%D8%B3%D9%85%D9%83%20%D8%A8%D8%AD%D8%B1%2C%D9%85%D9%83%D8%B3%D8%B1%D8%A7%D8%AA%2C%D8%AA%D9%88%D8%AA%2C%D8%AA%D9%85%D8%B1%2C%D8%A8%D9%84%D8%AD%2C%D8%AA%D9%8A%D9%86%2C%D9%85%D9%88%D8%B2%2C%D8%AA%D9%81%D8%A7%D8%AD%2C%D9%85%D8%B4%D9%85%D8%B4%2C%D8%A8%D8%B1%D9%82%D9%88%D9%82%2C%D9%83%D8%B4%D9%83%D9%81%D8%A7%D9%84%2C%D8%AC%D9%88%D8%AF%D9%87%2C%D8%B4%D9%8A%D8%AF%D8%B1%2C%D8%A7%D9%85%D8%AA%D9%86%D8%A7%D9%84%2C%D9%81%D9%84%D9%85%D9%86%D9%83%2C%D9%83%D9%85%D8%AB%D8%B1%2C%D8%A8%D8%B3%D8%B7%D8%B1%D9%85%2C%D9%84%D8%A7%D9%88%D8%B1%2C%D9%85%D9%84%D8%AD%2C%D8%B4%D8%A7%D9%8A%20%D8%A7%D8%AE%D8%B6%D8%B1%2C%D8%A8%D9%86%2C%D8%AE%D9%84%20%D8%AA%D9%81%D8%A7%D8%AD%2C%D9%83%D8%A8%D8%AF%2C%D9%83%D8%A7%D9%83%D8%A7%2C%D8%A7%D9%8A%D8%B3%20%D9%83%D8%B1%D9%8A%D9%85%2C%D8%A7%D8%B1%D8%B2%20%D8%A8%D9%84%D8%A8%D9%86%2C%D8%AC%D8%A8%D9%84%D9%8A%2C%D8%A8%D8%B3%D8%A8%D9%88%D8%B3%2C%D8%B9%D9%86%D8%A8%2C%D8%AE%D9%84%20%D8%B9%D9%86%D8%A8%2C%D8%AE%D9%84%20%D8%A7%D8%A8%D9%8A%D8%B6">                    <div class="relative h-[136px] w-[106px] md:h-[378px] md:w-[295px] rounded-xl border-md border-primary-hover p-2xs"                      style="border-color:#2d2d2d">                      <p><img src="https://eg-market.github.io/ai/Drdiaa.jpg"                          style="width: 281px; height: 361px;"></p>                    </div>
+                 </a>                <div class="w-[calc(50%-0.5rem)] md:w-[calc(25%-1.5rem)] flex justify-center">										  <a  href="https://uae-marker.github.io/ai/index_B.html?category=%D8%A3%D8%B7%D8%B9%D9%85%D8%A9+-+%D8%A3%D8%B3%D9%85%D8%A7%D9%83">                  </a><a href="https://eg-market.github.io/ai/tibat.html?products=%D8%A3%D8%B1%D8%B2%2C%D8%A8%D8%B7%D8%A7%D8%B7%D8%B3%2C%D8%B3%D9%83%D8%B1%2C%D8%B3%D9%85%D9%86%20%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A%2C%D8%B2%D8%A8%D8%AF%D9%87%20%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A%2C%D8%B2%D9%8A%D8%AA%20%D8%B2%D9%8A%D8%AA%D9%88%D9%86%2C%D8%B3%D9%85%D8%A7%D9%86%2C%D8%AD%D9%85%D8%A7%D9%85%2C%D8%A7%D8%B1%D8%A7%D9%86%D8%A8%2C%D9%84%D8%AD%D9%85%20%D8%B6%D8%A7%D9%86%D9%8A%2C%D8%AC%D9%85%D9%84%2C%D8%A8%D8%AA%D9%84%D9%88%2C%D9%83%D9%86%D8%AF%D9%88%D8%B2%2C%D9%85%D9%81%D8%B1%D9%88%D9%85%2C%D8%B0%D8%B1%D9%87%2C%D8%B4%D8%B9%D9%8A%D8%B1%2C%D9%81%D8%B1%D9%8A%D9%83%2C%D8%B2%D9%8A%D8%AA%D9%88%D9%86%2C%D9%83%D9%88%D8%B3%D9%87%2C%D8%AA%D9%88%D8%B3%D8%AA%20%D8%A8%D8%A7%D9%84%D8%B1%D8%AF%D9%87%2C%D8%B9%D8%B3%D9%84%20%D9%86%D8%AD%D9%84%2C%D8%B9%D8%B3%D9%84%20%D8%A7%D8%B3%D9%88%D8%AF%2C%D9%85%D8%B1%D8%A8%D9%89%2C%D8%AD%D9%84%D8%A7%D9%88%D9%87%2C%D8%B7%D8%AD%D9%8A%D9%86%D9%87%2C%D9%86%D9%88%D8%AA%D9%8A%D9%84%D8%A7%2C%D9%84%D8%A7%D9%86%D8%B4%D9%88%D9%86%20%D9%85%D8%B9%D9%84%D8%A8%2C%D8%B9%D8%B5%D9%8A%D8%B1%2C%D8%AA%D9%88%D9%86%D8%A9%2C%D8%B1%D9%86%D8%AC%D9%87%2C%D8%B3%D9%85%D9%83%20%D8%A8%D8%AD%D8%B1%2C%D9%85%D9%83%D8%B3%D8%B1%D8%A7%D8%AA%2C%D8%AA%D9%88%D8%AA%2C%D8%AA%D9%85%D8%B1%2C%D8%A8%D9%84%D8%AD%2C%D8%AA%D9%8A%D9%86%2C%D9%85%D9%88%D8%B2%2C%D8%AA%D9%81%D8%A7%D8%AD%2C%D9%85%D8%B4%D9%85%D8%B4%2C%D8%A8%D8%B1%D9%82%D9%88%D9%82%2C%D9%83%D8%B4%D9%83%D9%81%D8%A7%D9%84%2C%D8%AC%D9%88%D8%AF%D9%87%2C%D8%B4%D9%8A%D8%AF%D8%B1%2C%D8%A7%D9%85%D8%AA%D9%86%D8%A7%D9%84%2C%D9%81%D9%84%D9%85%D9%86%D9%83%2C%D9%83%D9%85%D8%AB%D8%B1%2C%D8%A8%D8%B3%D8%B7%D8%B1%D9%85%2C%D9%84%D8%A7%D9%88%D8%B1%2C%D9%85%D9%84%D8%AD%2C%D8%B4%D8%A7%D9%8A%20%D8%A7%D8%AE%D8%B6%D8%B1%2C%D8%A8%D9%86%2C%D8%AE%D9%84%20%D8%AA%D9%81%D8%A7%D8%AD%2C%D9%83%D8%A8%D8%AF%2C%D9%83%D8%A7%D9%83%D8%A7%2C%D8%A7%D9%8A%D8%B3%20%D9%83%D8%B1%D9%8A%D9%85%2C%D8%A7%D8%B1%D8%B2%20%D8%A8%D9%84%D8%A8%D9%86%2C%D8%AC%D8%A8%D9%84%D9%8A%2C%D8%A8%D8%B3%D8%A8%D9%88%D8%B3%2C%D8%B9%D9%86%D8%A8%2C%D8%AE%D9%84%20%D8%B9%D9%86%D8%A8%2C%D8%AE%D9%84%20%D8%A7%D8%A8%D9%8A%D8%B6">                    <div class="relative h-[136px] w-[106px] md:h-[378px] md:w-[295px] rounded-xl border-md border-primary-hover p-2xs"                      style="border-color:#2d2d2d">                      <p><img src="https://eg-market.github.io/ai/Drdiaa.jpg"                          style="width: 281px; height: 361px;"></p>                    </div>
                   </a> </div>   --> </div>
               <!-- الصورة 2 -->
               <div class="w-[calc(50%-0.5rem)] md:w-[calc(25%-1.5rem)] flex justify-center">
@@ -1049,7 +1075,8 @@ class="whitespace-pre-wrap">صنف</span> </div>
             loading="lazy" decoding="async" data-nimg="1" style="color:transparent"
 
             src="https://eg-market.github.io/ai/images/Home.png" height="28" width="28"></div>
-        <div class="text-sm leading-4 font-regular text-center">الصفحة الرئيسية</div>
+        <div class="text-sm leading-4 font-regular text-center" data-i18n="nav_home">الصفحة
+          الرئيسية</div>
       </a> <a class="relative flex flex-1 flex-col items-center justify-start transition-all duration-500 h-full"
 
         href="/categories">
@@ -1059,7 +1086,7 @@ class="whitespace-pre-wrap">صنف</span> </div>
             loading="lazy" decoding="async" data-nimg="1" style="color:transparent"
 
             src="https://eg-market.github.io/ai/Categories.png" height="28" width="28"></div>
-        <div class="text-sm leading-4 font-regular text-center">الفئات</div>
+        <div class="text-sm leading-4 font-regular text-center" data-i18n="nav_categories">الفئات</div>
       </a><a class="relative flex flex-1 flex-col items-center justify-start transition-all duration-500"
 
         href="/loyalty">
@@ -1069,7 +1096,7 @@ class="whitespace-pre-wrap">صنف</span> </div>
             decoding="async" data-nimg="1" style="color:transparent" src="https://eg-market.github.io/ai/share.webp"
 
             height="48" width="48"></div>
-        <div class="text-sm leading-4 font-regular text-center">شيـر</div>
+        <div class="text-sm leading-4 font-regular text-center" data-i18n="nav_share">شيـر</div>
       </a>
       <!--
       <a class="relative flex flex-1 flex-col items-center justify-start transition-all duration-500 h-full"        href="/profile">        <div class="max-w-[60px] bg-primary h-2xs absolute top-[-3px] w-full rounded-b-sm transition-opacity duration-300 opacity-0"></div>        <div class="relative transition-all duration-500 mt-2xs"><img alt="الملف الشخصي"            loading="lazy" decoding="async" data-nimg="1" style="color:transparent"            src="https://eg-market.github.io/ai/profile.png" height="28" width="28"></div>        <div class="text-sm leading-4 font-regular text-center">الملف          الشخصي</div>      </a>-->
@@ -1082,7 +1109,7 @@ class="whitespace-pre-wrap">صنف</span> </div>
         <div class="pl-md w-full border-b border-white"><br>
           <div class="mt-md pb-md">
             <div class="flex sm:justify-center">
-              <div class="text-sm leading-4 font-regular mr-md text-white">ابقى
+              <div class="text-sm leading-4 font-regular mr-md text-white" data-i18n="stay_connected">ابقى
                 على تواصل معنا</div>
               <a class="pr-xs dark:hover:text-white" href="https://www.facebook.com/profile.php?id=61588419734878"><img
 
@@ -1118,8 +1145,8 @@ class="whitespace-pre-wrap">صنف</span> </div>
               <img alt="" loading="lazy" decoding="async" data-nimg="1" style="color:transparent"
 
                 src="https://eg-market.github.io/ai/images.png" height="24" width="24">
-              <div class="text-sm leading-4 font-regular text-white">تواصل معنا
-                عبر الدردشة للحصول على المساعدة</div>
+              <div class="text-sm leading-4 font-regular text-white" data-i18n="contact_chat">تواصل
+                معنا عبر الدردشة للحصول على المساعدة</div>
             </a>
             <div data-state="closed" id="radix-:R2b5l7rlkq:" role="region" aria-labelledby="radix-:Rb5l7rlkq:"
 
@@ -1204,7 +1231,7 @@ class="whitespace-pre-wrap">صنف</span> </div>
 </style> <div class="gap-lg grid grid-cols-2 md:grid-cols-5 footer-section">
             <div><br>
               <div>
-                <div class="text-sm leading-4 font-regular mt-md text-white">ابقى
+                <div class="text-sm leading-4 font-regular mt-md text-white" data-i18n="stay_connected">ابقى
                   على تواصل معنا</div>
                 <div class="mt-xs flex social-icons-large"> <a class="pr-xs dark:hover:text-white"
 
@@ -1241,7 +1268,7 @@ class="whitespace-pre-wrap">صنف</span> </div>
                   src="https://eg-market.github.io/ai/images.png" class="h-12 w-12"
 
                   height="48" width="48">
-                <div class="text-lg leading-7 font-bold text-white pr-2">تواصل
+                <div class="text-lg leading-7 font-bold text-white pr-2" data-i18n="contact_help">تواصل
                   معنا للحصول على المساعدة </div>
               </a> <a class="bg-primary-active hover:bg-primary-active/90 gap-md flex items-center justify-start p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
 
@@ -1270,14 +1297,15 @@ class="whitespace-pre-wrap">صنف</span> </div>
                       data-nimg="1" style="color:transparent" src="https://eg-market.github.io/ai/appgalary.png"
 
                       height="24" width="100"></a>
-                  <div class="text-sm leading-4 font-regular text-white">Download
+                  <div class="text-sm leading-4 font-regular text-white" data-i18n="download_label">Download
                     </div> </div>
               </div>
             </div>
           </div>
           <div class="flex flex-col items-center justify-between pb-[108px] text-white md:flex-row-reverse md:bg-gray-800 md:pb-0">
-            <div class="py-2xs md:pr-3xl w-full bg-white text-center text-sm font-medium text-black md:w-auto md:bg-gray-800 md:py-0 md:text-white">©
-              &nbsp;2026 سوبرماركات مصر</div>
+            <div class="py-2xs md:pr-3xl w-full bg-white text-center text-sm font-medium text-black md:w-auto md:bg-gray-800 md:py-0 md:text-white"
+
+              data-i18n="copyright">© &nbsp;2026 سوبرماركات </div>
             <div class="bg-gold-600 pl-xs md:pl-3xl flex h-[76px] w-full items-center md:w-auto md:bg-black">
               <p><br>
               </p>
@@ -1525,35 +1553,181 @@ return false; // Allow the default handling (e.g., displaying the error in the c
     <!-- Modal للمستخدم -->
     <div id="user-modal" class="modal" style="display:none;">
       <div class="modal-content"> <span class="close-btn">×</span>
-        <div class="modal-header"> <button id="tab-login" class="tab-button active ">تسجيل
-            الدخول</button> <button id="tab-signup" class="tab-button">إنشاء
-            حساب</button> </div>
+        <div class="modal-header"> <button id="tab-login" class="tab-button active "
+
+            data-i18n="login_tab">تسجيل الدخول</button> <button id="tab-signup"
+
+            class="tab-button" data-i18n="signup_tab">إنشاء حساب</button> </div>
         <div id="login-form" class="tab-content active">
-          <h2>تسجيل الدخول</h2>
+          <h2 data-i18n="login_heading">تسجيل الدخول</h2>
           <form id="login"> <input id="login-email" placeholder="البريد الإلكتروني"
 
-              required="" type="email"> <input id="login-password" placeholder="كلمة المرور"
+              data-i18n-placeholder="email_placeholder" required="" type="email">
+            <input id="login-password" placeholder="كلمة المرور" data-i18n-placeholder="password_placeholder"
 
-              required="" type="password"> <button type="submit">دخول</button>
+              required="" type="password"> <button type="submit" data-i18n="login_submit">دخول</button>
           </form>
           <div id="login-message"></div>
         </div>
         <div id="signup-form" class="tab-content">
-          <h2>إنشاء حساب جديد</h2>
+          <h2 data-i18n="signup_heading">إنشاء حساب جديد</h2>
           <form id="signup"> <input id="signup-email" placeholder="البريد الإلكتروني"
 
-              required="" type="email"> <input id="signup-password" placeholder="كلمة المرور"
+              data-i18n-placeholder="email_placeholder" required="" type="email">
+            <input id="signup-password" placeholder="كلمة المرور" data-i18n-placeholder="password_placeholder"
 
               required="" type="password"> <input id="signup-whatsapp" placeholder="رقم واتساب (اختياري)"
 
-              type="tel"> <button type="submit">إنشاء حساب</button> </form>
+              data-i18n-placeholder="whatsapp_placeholder" type="tel"> <button
+
+              type="submit" data-i18n="signup_submit">إنشاء حساب</button> </form>
           <div id="signup-message"></div>
         </div>
       </div>
     </div>
     <!-- رسالة ترحيب بعد تسجيل الدخول (مخفية افتراضياً) -->
     <div id="user-greeting" style="display:none;"></div>
-    <!-- ==================== نظام تسجيل الدخول وإدارة المستخدمين ==================== -->
+    <script>
+/* ==================== نظام تعدد اللغات (عربي / إنجليزي) ==================== */
+window.I18N = {
+  ar: {
+    page_title: " | أحدث العروض كل يوم من 30 سوبر ماركت، موبايلات، إلكترونيات",
+    header_title: "🛒  - أول محرك بحث لعروض السوبر ماركت يومياً",
+    header_sub1: "سجّل دخولك أو أنشئ حساباً بجانب مربع البحث لتحصل على تطبيق الموبايل مجاناً",
+    header_sub2: "قارن الأسعار بين كارفور، عثيم، لولو و40 متجراً آخر - ووفّر حتى 70%",
+    old_offers: "العروض القديمة",
+    todays_offers: "عروض اليوم",
+    mobiles_plus: "موبايلات +",
+    new_user_btn: "اضغط هنا إذا كنت مستخدماً جديداً",
+    search_label: "ابحث",
+    search_items: "صنف",
+    login_tab: "تسجيل الدخول",
+    signup_tab: "إنشاء حساب",
+    login_heading: "تسجيل الدخول",
+    signup_heading: "إنشاء حساب جديد",
+    email_placeholder: "البريد الإلكتروني",
+    password_placeholder: "كلمة المرور",
+    whatsapp_placeholder: "رقم واتساب (اختياري)",
+    login_submit: "دخول",
+    signup_submit: "إنشاء حساب",
+    signup_submit_big: "اضغط لإنشاء حساب",
+    nav_home: "الصفحة الرئيسية",
+    nav_categories: "الفئات",
+    nav_share: "شيـر",
+    stay_connected: "ابقى على تواصل معنا",
+    contact_chat: "تواصل معنا عبر الدردشة للحصول على المساعدة",
+    contact_help: "تواصل معنا للحصول على المساعدة",
+    download_label: "تحميل",
+    copyright: "© 2026 سوبرماركات ",
+    login_btn_main: "تسجيل الدخول / حساب جديد (ادخل على حسابك ليصلك مجاناً تطبيق الموبايل)",
+    welcome_msg_prefix: "مرحباً، ",
+    logout_btn: "تسجيل الخروج",
+    login_required_msg: "يرجى إدخال البريد الإلكتروني وكلمة المرور.",
+    login_success_msg: "تم تسجيل الدخول بنجاح!",
+    signup_required_msg: "البريد الإلكتروني وكلمة المرور مطلوبان.",
+    signup_success_msg: "تم إنشاء الحساب بنجاح!",
+    lang_switch_label: "English"
+  },
+  en: {
+    page_title: "Egypt Market | Daily Best Offers from 30+ Supermarkets, Mobiles, Electronics",
+    header_title: "🛒 Souq Masr - The first search engine for daily supermarket offers",
+    header_sub1: "Log in to your account or create one next to the search box to receive the free mobile application",
+    header_sub2: "Compare prices between Carrefour, Othaim, Lulu and 40 others – save up to 70%",
+    old_offers: "Old offers",
+    todays_offers: "Today's offers",
+    mobiles_plus: "Mobiles +",
+    new_user_btn: "Click here if you are a new user",
+    search_label: "Search",
+    search_items: "items",
+    login_tab: "Login",
+    signup_tab: "Sign up",
+    login_heading: "Login",
+    signup_heading: "Create a new account",
+    email_placeholder: "Email",
+    password_placeholder: "Password",
+    whatsapp_placeholder: "WhatsApp number (optional)",
+    login_submit: "Login",
+    signup_submit: "Sign up",
+    signup_submit_big: "Tap to create account",
+    nav_home: "Home",
+    nav_categories: "Categories",
+    nav_share: "Share",
+    stay_connected: "Stay in touch with us",
+    contact_chat: "Chat with us for help",
+    contact_help: "Contact us for help",
+    download_label: "Download",
+    copyright: "© 2026 Egypt Supermarkets",
+    login_btn_main: "Login / New account (sign in to get the free mobile app)",
+    welcome_msg_prefix: "Welcome, ",
+    logout_btn: "Logout",
+    login_required_msg: "Please enter your email and password.",
+    login_success_msg: "Logged in successfully!",
+    signup_required_msg: "Email and password are required.",
+    signup_success_msg: "Account created successfully!",
+    lang_switch_label: "العربية"
+  }
+};
+
+// اللغة الافتراضية بحسب اسم/رابط الموقع: eg... => عربي، غير ذلك => إنجليزي
+window.getSiteDefaultLang = function () {
+  var host = (location.hostname || "").toLowerCase().replace(/^www\./, "");
+  if (host.indexOf("eg") === 0) return "ar";
+  var path = (location.pathname || "").toLowerCase().replace(/^\//, "");
+  if (path.indexOf("eg") === 0) return "ar";
+  return "en";
+};
+
+// اللغة الحالية: تفضيل محفوظ يدوياً (إن وجد) وإلا اللغة الافتراضية
+window.getSiteLang = function () {
+  try {
+    var saved = localStorage.getItem("site_lang");
+    if (saved === "ar" || saved === "en") return saved;
+  } catch (e) {}
+  return window.getSiteDefaultLang();
+};
+
+window.applyLanguage = function (lang) {
+  if (lang !== "ar" && lang !== "en") lang = "en";
+  var dict = window.I18N[lang];
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(function (el) {
+    var key = el.getAttribute("data-i18n");
+    if (dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+    var key = el.getAttribute("data-i18n-placeholder");
+    if (dict[key] !== undefined) el.placeholder = dict[key];
+  });
+
+  try { localStorage.setItem("site_lang", lang); } catch (e) {}
+  window.__siteLang = lang;
+
+  // تحديث النصوص التي يتم إنشاؤها ديناميكياً بواسطة جافاسكريبت (تسجيل الدخول/الترحيب/الخروج)
+  var loginBtnText = document.querySelector(".login-btn-text");
+  if (loginBtnText) loginBtnText.textContent = dict.login_btn_main;
+
+  var greetText = document.querySelector(".user-greeting-text");
+  if (greetText && window.__currentUserName) {
+    greetText.textContent = dict.welcome_msg_prefix + window.__currentUserName;
+  }
+
+  var logoutBtn = document.querySelector(".logout-btn-text");
+  if (logoutBtn) logoutBtn.textContent = dict.logout_btn;
+
+  var toggleBtn = document.getElementById("lang-toggle-btn");
+  if (toggleBtn) toggleBtn.textContent = dict.lang_switch_label;
+};
+
+window.toggleSiteLang = function () {
+  window.applyLanguage(window.__siteLang === "ar" ? "en" : "ar");
+};
+
+// تطبيق اللغة فور وصول المتصفح لهذا الجزء من الصفحة (كل العناصر السابقة أصبحت في الـ DOM)
+window.applyLanguage(window.getSiteLang());
+</script> <!-- ==================== نظام تسجيل الدخول وإدارة المستخدمين ==================== -->
     <style>
   /* زر تسجيل الدخول */
   /* زر تسجيل الدخول باللون الأحمر */
@@ -1708,7 +1882,8 @@ buttonContainer.className = 'duration-300 ease-in-out hidden md:flex gap-lg item
 buttonContainer.style.margin = '0 15px';
 const btn = document.createElement('button');
 btn.className = 'login-btn';
-btn.innerHTML = '<img src="https://eg-market.github.io/ai/user.png" alt="User" style="width:60px; animation: flashing 1s infinite;height:60px;"> <span style="font-size: 1.5em;">تسجيل الدخول / حساب جديد ((ادخل علي حسابك ليصلك مجانا تطبيق الموبايل))-</span>';
+const _dict0 = window.I18N[window.getSiteLang()];
+btn.innerHTML = '<img src="https://eg-market.github.io/ai/user.png" alt="User" style="width:60px; animation: flashing 1s infinite;height:60px;"> <span class="login-btn-text" style="font-size: 1.5em;">' + _dict0.login_btn_main + '</span>';
 btn.addEventListener('click', () => modal.style.display = 'block');
 buttonContainer.appendChild(btn);
 searchDiv.parentNode.appendChild(buttonContainer);
@@ -1719,10 +1894,13 @@ return btn;
   function showUserGreeting(user) {
     const container = document.querySelector('.duration-300.ease-in-out.hidden.md\\:flex.gap-lg.items-center.md\\:mr-lg.md\\:flex-1');
     if (container) {
+      const _dict1 = window.I18N[window.getSiteLang()];
+      const _name = user.email.split('@')[0];
+      window.__currentUserName = _name;
       container.innerHTML = `
         <div class="user-greeting">
           <img src="https://eg-market.github.io/ai/user.png" alt="User" style="width:20px; height:20px;">
-          <span>مرحباً، ${user.email.split('@')[0]}</span>
+          <span class="user-greeting-text">${_dict1.welcome_msg_prefix}${_name}</span>
         </div>
       `;
     }
@@ -1750,16 +1928,17 @@ function checkLoggedInUser() {
   // معالجة تسجيل الدخول
 function handleLogin(e) {
   e.preventDefault();
+  const _dict2 = window.I18N[window.getSiteLang()];
   const email = loginEmail.value.trim();
   const password = loginPassword.value.trim();
   if (!email || !password) {
-    loginMsg.textContent = 'يرجى إدخال البريد الإلكتروني وكلمة المرور.';
+    loginMsg.textContent = _dict2.login_required_msg;
     return;
   }
   auth.signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       loginMsg.style.color = 'green';
-      loginMsg.textContent = 'تم تسجيل الدخول بنجاح!';
+      loginMsg.textContent = _dict2.login_success_msg;
       setTimeout(() => {
         modal.style.display = 'none';
       }, 1000);
@@ -1773,11 +1952,12 @@ function handleLogin(e) {
   // معالجة إنشاء حساب جديد
 function handleSignup(e) {
   e.preventDefault();
+  const _dict3 = window.I18N[window.getSiteLang()];
   const email = signupEmail.value.trim();
   const password = signupPassword.value.trim();
   const whatsapp = signupWhatsapp.value.trim();
   if (!email || !password) {
-    signupMsg.textContent = 'البريد الإلكتروني وكلمة المرور مطلوبان.';
+    signupMsg.textContent = _dict3.signup_required_msg;
     return;
   }
   auth.createUserWithEmailAndPassword(email, password)
@@ -1791,7 +1971,7 @@ function handleSignup(e) {
     })
     .then(() => {
       signupMsg.style.color = 'green';
-      signupMsg.textContent = 'تم إنشاء الحساب بنجاح!';
+      signupMsg.textContent = _dict3.signup_success_msg;
       setTimeout(() => {
         modal.style.display = 'none';
       }, 1000);
@@ -1807,7 +1987,8 @@ function handleSignup(e) {
     const container = document.querySelector('.user-greeting');
     if (container) {
       const logoutBtn = document.createElement('button');
-      logoutBtn.textContent = 'تسجيل الخروج';
+      logoutBtn.className = 'logout-btn-text';
+      logoutBtn.textContent = window.I18N[window.getSiteLang()].logout_btn;
       logoutBtn.style.marginRight = '10px';
       logoutBtn.style.backgroundColor = '#dc2626';
       logoutBtn.style.color = 'white';
