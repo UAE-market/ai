@@ -587,7 +587,8 @@ border-radius: 4px; /* إضافة انحناء بسيط للحدود (اختيا
     <div class="container">
       <div class="hero-banner">
         <div class="hero-content">
-          <h1>🛒سوق مصر : أفضل محرك بحث عن منتجات وعروض السوبرماركت اليومية</h1>
+          <h1>🛒سوق مصر : أفضل محرك بحث عن منتجات وعروض السوبرماركت
+            اليومية</h1>
           <p class="hero-subtitle">قارن الأسعار بين كبرى المتاجر - وفر حتى 70%</p>
           <div class="ticker-wrap">
             <div class="ticker-label"><i class="fas fa-bolt"></i> عروض مميزة</div>
@@ -1779,7 +1780,7 @@ document.getElementById('grid-pagination').style.display = 'none';
             let rowClass = item._discount_pct > 20 ? 'class="highlight"' : '';
             let flyerId = item.solution_key || '';
             let pageNumber = item.pageNo?.match(/page_(\d+)/)?.[1] || item.pageNo?.replace(/[^0-9]/g, '') || '';
-            let url = flyerId ? `https://www.yabalashoffers.com/flyer.php?d=${encodeURIComponent(flyerId)}&c=eg` : '#';
+            let url = flyerId ? `https://www.yabalashoffers.com/flyer.php?d=${encodeURIComponent(flyerId)}&c=ae` : '#';
             let currentPriceHtml = `${formatPrice(item.currentPrice)} ${item.currency}`;
             if (isMobile && item.currency === 'EGP') {
                 currentPriceHtml = `${formatPrice(item.currentPrice)} ج`;
