@@ -1,0 +1,292 @@
+أطعمة - أسماك=أسماك=Seafood=بلطي سوبر كبير=Fresh Fish=مأكولات بحرية=Salted Fish=Shrimp=Fish Fillet=رنجة=فسيخ=سردين=تونة طازجة=بلطي=مكرونة سمك=بوري=دنيس=قشر بياض=جمبري=كابوريا=كاليماري=سبيط=فيليه سمك=جندوفلى=سمك لوت=سمك بياض=بربوني=ماكريل=سالمون=سى فود=كليمارى=Fishery=سمك بوري=رنجة فاكيوم=رنجة لوكس=فيليه بلطي=Tilapia Fillet=fish
+
+أجهزة تكييف=Electronics / Air Conditioners=Air Conditioners=Air Conditioner=تكييف=سبليت=انفرتر=تكييف سبليت=أجهزة تبريد=كبه
+
+أجهزة تليفزيون والكترونيات=Electronics (TV)=Electronics / Batteries=Electronics/Batteries=Electronics/Household=TV=Television=Televisions=Smart Televisions=Digital Satellite Receiver=TV Mount=TV Mounts=حوامل شاشات=شاشة=كاميرا=RCVR=Receiver=ريسيفر=Astra Receiver=ASTRA HD=Electronics=Electronics Accessories=Electronics/Electrical Accessories=Electronics / Electrical Accessories=إلكترونيات
+
+أجهزة خلاطات=Home Appliances / Blenders=Blender=Blender with accessories=Hand Blender=خلاط=خلاطات يدوية=الكبات=Chopper
+
+أجهزة سخانات ودفايات=Home Appliances / Heaters=Heaters=Electric Heater=Gas Heater=Water Heater=Electric Water Heater=Gas Water Heater=Home Appliances / Water Heaters=أجهزة تدفئة=سخان=دفاية كهرباء
+
+أجهزة سمعية وكمبيوتر=أجهزة موبايل وكمبيوتر=Electronics / Audio=Audio Equipment=Electronics / Audio / Soundbar=Electronics / Audio / Speaker=Electronics / Audio / Subwoofer=Electronics / Speakers=Electronics / Subwoofers=Speakers=Headphones=Bluetooth Earbuds=Wireless Earbuds=أجهزة سمعية=Mobile Phone=Laptops=Networking=Mobiles=Computer Peripherals=Cables=Car Chargers=موبايل=شاشة=كاميرا=Smartphones=Printer=Monitor=Hi-Fi & Audio Systems=أجهزة إلكترونية=Portable Speaker=Smart Band=Earphone=Subwoofer=صب ووفر=Zero Subwoofer=First Subwoofer=مكبر صوت=Wireless Earbuds=MOBILE=Mobile Phone=Smartphone=هاتف محمول=realme=oppo=hp=motorola=vivo=A17=A57=A07=A15=A19=ultra s=xiaomi=redmi=lenovo=acer=dell=asus=infinix=iphone=honor=msi-=intel=amd=اینوی=LNOL=موبايل=mobile=samsung galaxy= laptop=لاب توب=شاوم
+
+
+أجهزة فلاتر=Home Appliances / Water Filters=Water Filters=Water Filter Accessories=Water Filter Cartridges=Water Dispensers
+
+أجهزة منزلية=Home Appliances=Appliances=Household Appliances=Home Appliance=Home Appliances Accessories=أجهزة كهربائية منزلية=الأجهزة المنزلية=لأجهزة الكهربائية=Freezers=Home Appliances - Freezer=مكانس كهربائية=غسالات=مروحة=مروحة استاند=مكواة بالبخار=Fridge=Fans=Upright freezer=Iron=المكانس=شفاط=غسالة=غساله=ثلاجة=تلاجة=مروحة
+
+أدوات تنظيف=Household / Cleaning=Cleaning=Cleaning Accessories=Cleaning Products=Cleaning Supplies=Cleaning Product=Cleaning Products Bundle=Cleaning Tools=Cleaning Tools & Plastic=Household Cleaning=Household Cleaning Bundle=Household Cleaning Tool=Household Cleaning Tools=فوط=سلك=اسفنجة=قمامة=اكياس=مفرش=بطارية=مناديل مبللة=ليفه=فوطة ميكرو فايبر=سلك مواعين=مساحة=فوط تنظيف=Home & Kitchen Essentials=أدوات نظافة=Hand Mop=Cotton Mop=موب قطن
+
+أدوات مائدة=Tableware / Cutlery=Cutlery=Cutlery Set=Household Cutlery=Serving Utensils=Tableware=Dinnerware=Dinnerware Set=Serveware=Serving Ware=Servingware=Dessertware=Dessert Bowl Set=Dessert Bowls=Tray=Tray Set=Oblong Tray=أطقم سفرة=أطقم عشاء=Household/Tableware=Kitchen Organizer=Luminarc=لومينارك=أكواب زجاج=كوب زجاج=أكواب كرتون=Paper Cups
+
+أطعمة - توابل=Spices=Seasonings=Seasoning=Seasoning Mixes=Seasonings=Spice Mixes=Spices & Groceries=Spices & Herbs=Spices / Herbs=Spices & بهارات وتوابل=Seasonings=Spices/Seasonings=Spices/Seasoning=Mixes=Mixes/Spices=Food Seasoning=Broth/Stock Cubes=مكعبات مرقة=مرقة=البهارات=بهارات=توابل=خلطات الطبخ=عطارة=أعشاب=صلصة=صوص=مسترد=دريسنج=خل=توابل=بهارات=كاتشب=صلصه=فيجيتار=خلطة المفروم=مرقة لحمة=مخلل=طرشي=هريسة=مسطردة=جواكامولي=Dried Herbs=Peppers=Food / Cooking Ingredients=Marinades=قرفة=سيجار قرفة=Cinnamon=BBQ Sauce=Presto BBQ=صلصة باربكيو
+
+أطعمة -الألبان ومنتجاتها=Dairy=Dairy Products=Dairy & Alternatives=Dairy Alternatives=Dairy & Cheese=Dairy & Drinks=Dairy & Eggs=Dairy & Fats=Dairy & Ghee=Dairy & Milk=Dairy & Refrigerated=Dairy & Spreads=Dairy & Yogurt=Dairy / Beverages=Dairy/Beverages=Dairy / Butter=Dairy Butter=Dairy/Butter=Dairy / Drinking Yogurt=Dairy / Flavored Milk=Dairy / Milk=Dairy/Milk=Dairy / Milk Powder=Dairy/Milk Powder=Dairy / Yogurt=Dairy/Yogurt=Dairy Yogurt=Dairy / Yogurt Drink=Dairy/Yogurt Drink=Dairy Butter=Dairy Cheese=Dairy Cream=Dairy Dessert=Dairy Desserts=Dairy Drink=Dairy/Drink=Dairy Ghee=Dairy/Ghee=Dairy Spread=Dairy/Beverage=Dairy/Cheese/Salad=Dairy/Condensed Milk=Dairy/Cream=Dairy/Dessert=Dairy/Fats=Dairy/Fermented Milk=Dairy/Frozen Desserts=Dairy/Labneh=Dairy/Powdered Milk=Butter=Cream=Plant-based Milk=Plant-based Food=Yogurt=Laban=Milk=Milk Powder=Milk Pot=Cheese=ألبان=ألبان وأجبان=زبدة= الأجبان والمقبلات=بيض=لبن=حليب=زبادي=رايب=جبن=جبنة=قشطة=زبدة=لبنة=مانشيجو=امنتال=جودة=فلمنك=شيدر=رومى بيور=جبنة رومي=زبدة جاموسى=حليب مركز=كيرى=موزريلا=رايب=جبنة=Mozzarella=الأجبان والقطع الباردة=جودة لايت=هولندي لايت=جبنة هولندي=Dutch Light=Danone Hi Pro=دانون هاي برو=زبادي بروتين=Kiri=كيري=Lavash Kiri=جبنة كيري=Domty Vita=دومتي فيتا=براميلي=اسطنبولي=الحلوب مثلثات=ريكفورد مثلثات=جبنة مثلثات=Triangles Cheese
+
+أطعمة -بيض=Eggs=بيض=بيض احمر=بيض ابيض=بيض بلدي
+
+أطعمة -تمور=Groceries / Dates=Dates=Dates / Sweets
+
+أطعمة جاهزة / معلبات=Prepared Foods=Prepared Food=Prepared Foods=Prepared Meals=Ready Meals=Ready to Eat Meal=Frozen Prepared Food=Frozen Prepared Meals=Frozen Ready Meals=Fresh Food / Prepared Meals=Instant Broth=Broth/Stock Cubes=Instant Drink=Instant Drinks / Coffee Mix=Traditional Egyptian Food=وجبات جاهزة=وجبات خفيفة=Food/Dips=Ramadan Combo Meals=Dip=غموس=Mexicana Dip=غموس مكسيكانا=--------------------------
+
+أطعمة -حبوب الإفطار=Breakfast Cereals=Breakfast=Breakfast Cereal=Breakfast Cereals=Cereals=Cereal=Cereals/Breakfast=Oats=حبوب إفطار=Corn Flakes=Kellogg's Corn Flakes=TEMMY'S CORN FLAKES=كورن فليكس
+
+أطعمة -حبوب وبقوليات=grains=الأرز=Groceries / Rice=Rice=Rice Mix=Rice Mixes=Rice/Risotto=أرز=Canned Beans=حبوب=Pulses=Seeds=فاصوليا=عدس=حمص=فول=بقوليات=لوبيا=فريك=فاصوليا بلدى=عدس بجبه=فول سادة=حمص الشام=شوفان=أرز ميزة=أرز بسمتي=دقيق=كورن فليكس=Legumes/Chickpeas=Legumes/Lentils=البقوليات=بقاله=Grocery/Food=Couscous=Thermos=Groceries, Legumes=أرز بسمتي=بسمتي ذهبي=Thai Gold Basmati=بذر كتان=Flaxseed=ارز=الارز=أرز وبقوليات=أرز=All-purpose flour
+
+
+أطعمة -حلوى=Sweets=Sweets & Desserts=Sweets/Desserts=Sweets & Snacks=Sweets & Spreads=Sweets/Spreads=Sweets/Dates=Oriental Sweets=حلويات غربية=Desserts=Desserts/Cakes=Desserts/Jelly=Toffee=Candies=Syrup=Syrups=Syrups/Molasses=Molasses=دبس=Grocery / Snacks=Custard Mix==============
+
+أطعمة -حلويات وبسكويت=Biscuits=Biscuits & Cakes=Biscuits/Chocolate=Biscuits/Cookies=Biscuits/Snacks=Biscuits/Wafers=Crackers=Crackers & Biscuits=Cookies=بسكويت=حلويات منوعة=Mandoline=ماندولين ويفر=Wafer=JOY BISCUITS=بسكويت جوي=MCV JOY=Cookie=Cookies=El Abd Cookie=Choco Chip Cookie=كوكيز العبد===========
+
+أطعمة -زيوت ودهون=Groceries / Oils=Oils=Oils & Fats=Oils & Ghee=Oils & Vinegars=Cooking Oils/Fats=Cooking Oil=Food, Cooking Oil=Food, Cooking Oil/Ghee=Olive Oil=Grocery / Olive Oil=زيوت الطبخ=زيوت زيتون=زيوت طعام=زيت طعام=Groceries / Olives=Olives=Olives/Pickles=Olive Paste=زيتون=زيوت=سمنة=سمنة قوت القلوب=Ghee=زيت=زيت طعام=سهر زيت
+
+أطعمة -سكر=Groceries / Sugar=Sugar=Sugar, Tea=السكر=Sweeteners=Sweetener=Sweeteners/Spreads
+
+أطعمة- شيكولاتة وحلويات=Confectionery / Chocolate=Chocolate=Chocolate & Sweets=Chocolate/Sweets=Chocolate Bar=Chocolate Drink=Chocolate Drink Powder=Chocolate Minis=Chocolate Spread=Chocolate Spreads=Chocolate/Candy=Chocolate/Wafer=Chocolates=Chocolates/Gift Sets=Chocolates/Sweets=Candy=Candy/Chocolate=Candy/Sweets=Candies=Candies/Mints=Sweets/Chocolate=Sweets/Candy=Sweets/Candies=شوكولاتة=Chips=مارس=سنيكرز=جالاكسي=تويكس=باونتي=مالتيزرز=مينز=شيكولاتة=بونبون=طوفى=مارشميلو=جيلى=كاندى=طاجن نيوتيلا=لبان=آيس كريم=Snacks & Confectionery=Confectionery & Snacks=Protein Puffs=أطعمة- شيكولاتة وحلويات=Mars Minis=مارس مينيز=KitKat 2 Finger=كيت كات 2 إصبع=Choco Bello=شوكو بيلو=Galaxy Hazelnut=Galaxy Mini=Snickers Choco=شيكولاتة جالاكسي=سنيكرز
+
+أطعمة -صلصات وتوابل=Condiments / Vinegar=Vinegar=Vinegars=خل=Condiments=Sauces & Condiments=Condiments & Sauces=Condiments/Vinegar=Dressings=Sauces/Condiments=Sauces & Dressings=Sauces/Spices=Sauces/Spreads=Spreads & Condiments=Spreads/Condiments=Ketchup=Mayonnaise=Tomato Paste=الصلصات=صلصات=صلصة=صوصات=توابل وبهارات=ملح
+
+أطعمة -طحينة\حلاوة\عسل\شكولاتة سبريد=Spreads / Halawa=Halawa=Halawa & Spreads=Halawa & Tahina=Sweets / Halawa=Sweets/Halawa=Sweets/Halawa Spread=Sweets/Halva=Deli / Halawa=حلويات / حلاوة طحينية=Groceries / Spreads=Spreads=Spreads & Dips=Spreads / Dips=Spreads & Pastes=Spreads/Breakfast=Spreads/Butters=Spreads/Chocolate=Spreads/Chocolate Spread=Spreads/Confectionery=Spreads/Halawa=Spreads/Molasses=Spreads/Nut Butter=Spreads/Nut Butters=Spreads/Oils=Chocolate Spread=Peanut Butter=Halawa & Spreads=Food Spreads=Halawa & Tahina=Tahina=Tahini=طحينة=Deli / Spreads==Deli / Halawa=Dessert/Spread=حلاوة=حلاوة سادة=الحلوة=الحلوة حلاوة سادة=نوتزيتلا=Nutzitla=شيكولاتة سبريد=حلاوة طحينية=حلاوة سادة=حلاوة مكسرات
+
+أطعمة -عسل=Groceries / Honey=Honey=Honey/Spreads=Honey/Syrups
+
+أطعمة -فراخ وطيور=أطعمة -فراخ=Frozen Chicken=فراخ مجمدة=Frozen Chicken Products=Chicken products=Frozen Chicken / Prepared Meals=Frozen Chicken Drumsticks=Frozen Chicken Fillet=Frozen Chicken Meal=Frozen Chicken Meals=Frozen Chicken/Meals=Frozen Chicken Pane=Frozen Chicken Pane/Nuggets=Frozen Chicken Strips=Frozen Chicken/Strips=Frozen Chicken Wings=Frozen Chicken/Poultry=Frozen Chicken/Tenders=Processed Chicken=Frozen Processed Chicken=Prepared Poultry=Processed Poultry=Poultry=Poultry Products=Poultry/Chicken=Poultry/Meat=Poultry/Turkey=Poultry/Frozen=دواجن=دواجن مجمدة=دواجن ومجمدات=الطيور=دجاج=فراخ=بانيه=شيش=استربس=ناجتس=وراك=صدور=وراك رومي=دبوس رومي=رقاب رومي=بط=صدور بانية=دبوس دجاج=دجاج مسحب=Food / Coating Mix=Grilled Shish Tawook=جندوفلي=عرايس فريش=رومي فريش=رقاب رومي=دبوس صدر رومي=Gandofly=بانيه=استربس=ناجتس=شيش طاووق=Chicken Strips=HALWANI CHICKEN STRIPS=كرسبي ستريبس=Crispy Strips=سمان=Quail=سمانة بقري
+
+أطعمة -فواكه وخضروات=Fruits & Vegetables=Fruits=Fruits & Vegetables=FRUITS AND VEGETABLES=VEGETABLES AND FRUITS=فواكه=خضروات=Fresh Produce=Produce=Vegetables=Dried Fruits=بطاطس=باذنجان=فلفل=برتقال=طماطم=خيار=جزر=ليمون=كابوتشا=بنجر=بصل=فلفل رومى=فلفل ألوان=فلفل حشو=بلاك بيري=شهد=مشمش=ذره سكري=الفاكهة=الخضار=خضراوات=خضار وفاكهة=Fresh Fruit=Jarred Food=قسم الفواكة=أطعمة -فواكه وخضروات=لفت=لفت سوري=بطاطس=طماطم=خيار=باذنجان=كوسة=فلفل رومي=عنب=خضروات وفاكهة=مَانجو
+
+أطعمة -لحوم طازجة=Fresh Butchery=Fresh Butchery / Meat=Fresh Butchery / Prepared Food=Fresh Meat=Butchery=Meat=Meats=Meat products=Meat/Butchery=لحوم=لحوم بقري=لحوم ضاني=Beef Products=عكاوى=بفتيك=انتريكوت=موزه بقرى=لحم وش فخده=طرب=كباب حلة=مفروم بقرى=سجق=كبدة شرائح=روستو=لحم خضار=كفتة بقري=Beef Kofta=فايرواي كفتة=مفروم بلدي ممتاز=مجمدات
+
+أطعمة -لحوم مصنعة وأجبان=Deli / Cold Cuts=Cold Cuts=Cold Cuts / Deli Meat=Cold Cuts / Processed Meat=Cold Cuts/Deli=Coldcuts=Deli & Cold Cuts=Deli/Cold Cuts=Deli Meat=Deli/Meat=Deli Meats=Deli Meats / Cold Cuts=Delicatessen / Cold Cuts=Processed Meat / Cold Cuts=لحوم باردة=أجبان و لحوم بارده=اجبان و لحوم بارده=أجبان ولحوم باردة=أجبان و لحوم بارده=Deli=Deli & Olives=Deli & Processed Meats=Deli / Cheese=Deli / Processed Meat=Deli/Processed Meat=Deli / Salads=Deli / Spreads=Delicatessen / Olives=Delicatessen / Pickles=Sausages=Burgers=Ready TO Cook=قسم السلطات=Mini Vienna=ميني فيينا=سجق فيينا=كورن بيف=Corned Beef=Beefy=بيفي=Pure Beef=سوسيس=Sausage
+
+أطعمة مجمدة=Frozen Foods=Frozen=Frozen Products=Frozen Food=Frozen Desserts=Frozen Dough=Frozen Fruits=Frozen Pastries=Frozen Pastries/Appetizers=Frozen Pastries/Dough=Frozen Pastry=Frozen Potatoes=Frozen Vegetables=خضروات مجمدة=مجمدات=لحوم مجمدة=Frozen Meat=المجمّدات=أطعمة مجمدة=ملوخية مجمدة=Frozen Molokhia=لذة ملوخية=بطاطس مجمدة
+
+أطعمة -مخبوزات وحلويات=Pastries=Pastries/Croissants=Pastry=Pastry/Dough=Oriental Pastries=Savory Pastries=Frozen Pastries=Eclairs=Maamoul=Pizza=Koshary Mix=حلويات شرقية=مخبوزات=Bakery=Baked Goods=Bakery & Pastry=Bakery / Cakes=Bakery - Biscuits=Bakery - Bread Products=Bakery - Cakes=Bakery - Cookies=Bakery - Cupcakes=Bakery - Gateau=Bakery - Oriental Sweets=Bakery - Pastries=Bakery - Savory Pastries=Bakery - Snacks=Bakery Ingredients=Bakery/Dessert=Bakery/Desserts=Bakery/Dough=Bakery/Prepared Food=Bakery/Snacks=Bakery/Sweets=Baked Goods/Bread=Baked Goods/Muffins=Baked Goods/Pastries=Baked Goods/Sweets=Bread=Bread/Baked Goods=Cakes & Baked Goods=Cakes/Baked Goods=Cakes/Bakery=مخبوزات=مخبوزات ومكونات=بسكويت=خبز=بقسماط=كيك=بسبوسة=جلاش=مترو=رشدي=حلوى=رقاق=مينين=جاتو=كعكة سوفليه=فينو=كيزر=باتيه=فطير=تورتيلا=جريسيني=قرص=الحلويات=Kahk=حلويات العيد=بيتي فور=Ghorayeba=Patisserie=Ka'hk=Rusks=توست=توست سن=Whole Grain Toast=Petit Four=El Abd Petit Four=بيتي فور
+
+أطعمة -مخللات=Groceries / Pickles=Pickles=Pickles/Mixed Vegetables=Pickles/Olives=Pickles/Preserves=Pickles/Salads=طرشي=مخلل مشكل=مشكل لوكس=طرشي مشكل
+
+أطعمة -مربى=Spreads / Jams=Jams=Jams & Spreads=Jams/Spreads=Spreads & Jams=Spreads/Jams=Spreads/Jam=مربيات
+
+أطعمة -مشروبات =Hot Beverages / Coffee=Coffee=Coffee/Beverage=Coffee/Beverages=Coffee Set=Coffee & Tea Sets=Coffee Beans=Coffee Capsules=Coffee Creamer=Coffee Grinder=Coffee Machine=Coffee Maker=Coffee Pot Set=Coffee/Hot Beverages=Filter Coffee=Instant Coffee=Ready-to-drink Coffee=Turkish Coffee=قهوة=قهوة سريعة التحضير=مشروبات قهوة=Hot Beverages / Tea=Tea=Tea & Coffee=Tea & Gateau Set=Tea/Beverages=Tea Set=Tea/Herbal Drinks=Herbal Tea=Herbal Tea Blend=شاي=شاي أسود=شاي أعشاب=شاي اخضر=Hot Beverages/Cocoa=Hot Chocolate=مشروبات=Beverages=Beverages/Drink=Drinks=Drink=Drinks/Beverages=Hot Beverages=Hot Drinks=Hot Beverage=Hot Beverage Mix=Hot Drinks & Desserts=Hot Drinks / Herbal Tea=Beverages / Juice=Beverages/Juice=Juice=Juices=Juices & Drinks=Juice/Fruit Drink=Juice Set=Carbonated Water=Soft Drinks=Soft Drink=Energy Drink=Sports Drink=Ice Tea=Malt Beverage=Herbal Drinks=Herbal Drink=Green Tea=Wellness Tea=Traditional Beverages=Water=Beverages/Water=مشروبات غازية=مشروبات ساخنة=مشروبات شعير=مشروبات قهوة=عصائر=مياه=Energy Shot=قهوة=شاي=بن=ابوعوف=كافيه=كراون=نسكافيه=كابتشينو=عصير=مياه=مشروب=اورونامين=كاكاو=بن سادة=بن محوج=قهوة تركية=بن سريع الذوبان=كبسولات قهوة=شاي ناعم=شاي فتلة=مشروب طاقة=شراب شعير=Ramadan Supplies=Ramadan Essentials=Ramadan Products=Ramadan Provisions=Food Ingredients=Dried Fruit Paste=Nectar=Concentrate=Cappuccino=بوك مركز=Book Concentrate=شراب مركز=عصير مركز=Lipton=ليبتون=شاي فتلة=مشروبات غازية=Maxi Cans=مشروبات غازية=Soft Drinks Can=ماكسي كانز=ترمس قهوة
+
+
+أطعمة -معلبات / تونة=Canned Goods=Canned Food=Canned/Jarred Goods=Canned Goods / Sauces=Canned Goods/Sauces=Canned Goods / Seafood=Canned Goods/Legumes=Canned Goods/Preserves=Canned Goods/Ready Meals=Canned Legumes=Canned Fruit=Canned Fruits=Canned Meat=Canned Mushrooms=Canned Seafood=Canned Tuna=Canned Fish=Canned Food/Fish=Canned Food/Meat=Canned Vegetables=معلبات=معلبات خضروات=معلبات بحرية=أسماك معلبة=تونة=تونة=معلب=فول=ذرة=فاصوليا=مشروم=صلصة=دولفين=ماريو=أطعمة -معلبات / تونة
+
+أطعمة -مكرونة=pasta=Noodles
+
+الأثاث=Furniture=Home Furniture=Household Furniture=Furniture/Household=Furniture Care=Furniture polish=أثاث مكتبي=Outdoor Living=Travel size
+
+البيبي (مستلزمات)=Baby Products=Baby Care=Baby & Kids Personal Care=Baby Apparel=Baby Clothing=Baby Blanket=Baby Towels=Baby Care / Diapers=Baby Care/Diapers=Baby Diapers=Baby Products/Diapers=Diapers=Diaper Pants=Baby Care/Wipes=Baby Wipes=Wipes=Wet Wipes=حفاضات=حفاضات أطفال=مناديل مبللة=مستلزمات بيبي=Mother Care=Baby Gear / Outdoor Play=Baby Teething=Baby Feeding=Baby Bath=Johnsons Baby Conditioner=بلسم أطفال جونسون=Baby Wet Wipes=مناديل أطفال مبللة=Aloe Vera Wipes=Baby Diaper=حفاضات أطفال=F/B Dpr Prem=بودرة أطفال
+
+
+الشواء=BBQ & Grilling=Kitchen Appliances / Grills=BBQ Supplies=Grill Pan=Griddle=Cookware / Grill=فحم=Grilling Supplies=Charcoal
+
+ألعاب=Toys=Board Games=Games=Kids Toys=Dolls=Plush Toys=Remote Control Toys=Collectible Figures=Sports & Outdoor Toys=Toys & Candy=Toys & Stationery=Gaming Console=Hoverboard=Baby Soother=Balloons=فوانيس رمضان=Electric Scooter=Bicycles=فانوس=Toy / Ramadan Lantern=ميداليات=Puzzle=Ramadan Gifts=Toy Car=Life Stund Car Set=لعبة عربية=Baby Seat Float=كرسي عوامة أطفال=Jilong Babyseat=Inflatable Boat=عوامة مركب=Jilong Boat=ألعاب مائية=إكس بوكس=جهاز ألعاب
+
+
+العناية الشخصية=Personal Care=Personal Care Appliances=Personal Care Appliance=Personal Care / Baby Oil=Personal Care / Grooming=Personal Care / Liquid Soap=Personal Care / Shampoo=Personal Care / Shampoo & Shower=Personal Care / Shower Gel=Personal Care / Soap=Personal Care/Soap=Personal Care/Hair Care=Personal Care/Hygiene=Personal Care/Wipes=Health & Personal Care=Health/Personal Care=Health & Beauty=Health & Hygiene=Health and Beauty=Health/Household=Household & Personal Care=Household / =Personal Care=Household/Personal Care=Hygiene/Personal Care=Deodorant=Deodorant/Body Spray=مزيلات عرق=Men's Grooming=Women's Personal Care=Shaving=Shaving Products=Shaving/Hair Removal=Men's Razors=Men's Disposable Razors=Women's Razors=Women's Disposable Razors=الحلاقة=الحلاقة النسائية=عناية شخصية=Feminine Hygiene=Beard Trimmer=Multi-Groomer=Shaver=فرشاة=معجون=صابون=شامبو=بلسم=مزيل=جيليت=سنسوداين=مزيل عرق=Hand Sanitizer=Sanitary Pads=Purse Spray=منتجات مزيل رائحة العرق - للنساء=منتجات مزيل رائحة العرق - للرجال=ليفة=ليفة قفاز=Glove Loofah=لوفة استحمام=Always=الويز=فوط صحية=Protect Plus=Mega Long=Hand Soap=هاند سوب=صابون يد=Hergill=هيرجيل=شاور جل=قطن أذن=Cotton Buds=ايزابيللا قطن اذن=After Shave=NIVEA AFTER SHAVE=لوشن بعد الحلاقة=Sofy Ultra Thin=فوط صحية سوفي=Ultra Thin Pads=Multi Glove=قفاز تنظيف=قفاز متعدد
+
+العناية بالبشرة والنظافة=skin care=Bath & Body=Bathroom Accessories=Body Care=Body Care - Lotion=Body Splash=Hand Care=Hand Soap=Hand Wash=Handwash=Liquid Soap=Shower Gel=Soap=صابون=غسول لليدين=هاند واش=سائل استحمام=شاور جل=لوشن=غسول بشره=واقي شمس=Facial Wash=CARE&MORE FACIAL WASH=غسول وجه=Body Wash=Fomme Body Wash=بودي واش=سكراب وجه
+
+
+العناية بالشعر=Personal Care / Hair Care=Hair Care=Hair Care - Conditioner=Hair Care - Mask=Hair Care - Oil=Hair Care - Shampoo=Hair Care - Treatment=Hair Care (Conditioning Cream)=Hair Care (Shampoo)=Hair Care (Shampoo/Conditioner)=Personal Care / Conditioner=Personal Care / Hair Cream=Personal Care / Hair Removal=Personal Care / Hair Spray=Personal Care / Hair Styling=Hair Dryer=Hair Dye=Hair Styling=Skincare=شامبو=بلسم=حمام كريم=زيت شعر
+
+العناية بالفم=Oral Care=Oral Hygiene=Personal Care / Oral Care=Dental Care=معجون أسنان=فرشاة أسنان=جل اسنان=Beauty Products=العناية بالفم=Signal=سيجنال=Cavity Fighter=مكافح التسوس=Closeup=كلوس أب=معجون أسنان=فرشاة أسنان=غسول فم
+
+أواني زجاجية=Glassware=Drinkware=Drinkware Set=Glassware Set=Glassware / Coffee Set=Glassware / Dinnerware=Glassware / Drinking Glasses=Glassware / Kitchenware=Glassware/Kitchenware=Household / Glassware=Household/Glassware=Drinking Glasses=Glass Cups=Crystal Glasses=Flute Glasses=Flute Set=Flutes=Dessert Glasses=Dessert Cups=Dessert Bowls=Kids Drinkware=Mugs=Mug Set=Kitchenware (Mugs)=Kitchenware (Mugs with Holder)=Kitchenware (Mugs with Stand)=Sports & Outdoors / Drinkware=Water Bottle=Water Bottle Set=Stainless Steel Bottle
+
+تعطير الجو=Household / Air Freshener=Air Fresheners=Air Freshener=Air Freshener Spray=Household/Air Freshener=Home Care/Air Fresheners
+
+ديكور منزلي=Home Decor=Home Decor / Rugs=Home Fragrance=Home & Garden=هلال + فانوس نفخ=Flowers/Decor=Plants/Decor=Garden/Outdoor Decor=Clocks=Ramadan Decorations=زهور صناعية=ديكورات منزلية=إضاءة وديكور=Decorative=Artificial Flowers=Artificial Plants=Arts & Crafts
+
+ساعات وادوات=Wearables=Smart Watch=Smart Watches=Smartwatch=Fitness Equipment=Smart Scale
+
+سجاد=Home Decor / Rugs=Carpets=Carpets/Rugs=Rugs & Carpets=Rugs/Carpets=مشايات سجاد=دواسات=Doormats=ETHERIAL SHAG=Shag Rug=سجاد شاج
+
+سيارات (اكسسوارات)=Automotive / Car Accessories=Automotive=Automotive / Car Care=Automotive / Car Parts=Car Accessories=Car Fluids=Car Maintenance
+
+شنط واكسسوارات= Accessories / Bags=Accessories=Bags=رول قمامه=رول سفره=مفرش=اكياس ثلاجة=اكياس قمامة=Luggage
+
+غسيل (مستلزمات)=Laundry=Laundry Supplies=Laundry products=Laundry Care=Household/Laundry Care=Laundry & Cleaning=Stain Remover=Laundry Stain Remover=Household / Laundry / Stain Remover=Household/Stain Remover=مزيل بقع=مزيل بقع الغسيل=Household/Hygiene
+
+غسيل (مسحوق )=Laundry Detergents=Detergents=Detergent=Household Detergent=Household/Detergent=Laundry Detergent=Laundry Detergent Powder=Laundry Detergent Bundle=Laundry Detergent & Fabric Softener=Laundry Gel=Washing Powder=جل غسيل=جل غسيل اوتوماتيك=جل غسيل يدوي=جل للغسيل=منظفات الغسيل=منظفات غسيل=مسحوق=جل=غسيل=اتوماتيك=يدوي=منعم=معطر=اكسترا=برسيل=داو=مسحوق يدوى=مسحوق اوتوماتيك=جل غسيل ملابس=مزيل بقع=Fabric Softeners=Fabric Care=مسحوق اتوماتيك=جل غسيل=منعم أقمشة
+
+غسيل الأطباق=Dishwashing=Dishwasher Products=Dishwasher=Dishwashers=Dishwashing Liquid=Dish Soap=Dish Cleaner=Dishwashing Detergent=Dishwashing Capsules=Dishwashing Tabs=Dishwashing Liquid & All-Purpose Cleaner=Dishwashing Liquid & Bleach=Dishwashing Liquid & Floor Cleaner=Dishwashing Liquid & Floor Cleaner Bundle=Dishwashing Liquid, All-Purpose Cleaner=Dishwashing Liquid, Bundle=Dishwashing, Bleach=Dishwashing, Floor Cleaner=Household / Dishwashing=Dishwasher Detergent=Dishwasher Tablets=Dishwasher Additive=Dishwasher Aid=Dishwasher Detergent & Salt=Dishwasher Detergent, Salt, Rinse Aid=Dishwasher Rinse Aid=Dishwasher Salt=سائل غسيل أطباق=منظف اطباق=منظفات غسيل الأطباق=كبسولات غسيل أطباق=مساعد شطف غسالة الأطباق=اطباق=صحون=كبسولات=فيري=بريل=فينيش=بريل=سائل اطباق=منظف اطباق=سائل اطباق=منظف صحون=اقراص غسالات اطباق=منظفات غسالة أطباق=سائل أطباق=Dishwashing Liquid=وفير سائل أطباق=منظف أطباق=سائل أطباق=كبسولات أطباق
+
+أعياد ميلاد=كريسماس وديكورات=Christmas Decorations=Christmas Accessories=Christmas Decoration=Christmas Lights=Christmas Tableware=Christmas Trees=Christmas Accessories=Party Supplies=party=Candles=Party Masks=شمع=شموع=Party Decoration=Ultra Decoration=زينة حفلات
+
+مبيدات=Household / Pest Control=Insecticides=Insect Repellent=Pest Control=طارد ذباب=ريد=مبيد زاحف=Raid Mosquito Killer=طارد ناموس=رايد ناموس
+
+مستحضرات تجميل=Personal Care / Cosmetics=Beauty Tools=Beauty/Hair Care=Beauty/Personal Care=Cosmetics=Cosmetics Set=Cosmetics/Personal Care=Makeup Remover=Personal Care / Fragrances=Perfumes=Perfume Spray=Fragrance=Fragrance & Body Care=عطور=Lip Care=مكياج=كولونيا=Lipstick=Contour=Eyeshadow=بودرة معطرة للجسم=معطر للجسم=Hair Color=Makeup Accessory=Body Lotion=Highlighter=Blush=Hair & Body Perfumer=Eye Makeup=Face Makeup=Body Powder=Beauty/Bodycare=Concealer=Primer=Make Up=Body Mist=Eau de Parfume=Makeup Brushes=أدوات تجميل=Palette Dye=باليت=صبغة باليت=صبغة شعر=Hair Color=Body Spray=Perfume Spray=Kal Spray=سبراي معطر
+
+مستلزمات المخبوزات=Baking Ingredients=Baking=Baking & Cooking Ingredients=Baking/Cooking Ingredients=Baking Mix=Baking Mixes=Baking Mixes/Desserts=Baking Flour=Baking/Flour=Baking/Sugar=Baking & Condiments=Baking/Confectionery=Baking/Beverages=Cakes/Baking Mixes=Desserts / Baking Mixes=Desserts/Baking Mixes=Coating Mixes=Dessert Mix=Dessert Mixes=Dessert Topping Mix=Powders/Dessert Ingredients=مستلزمات الخبز=أدوات خبز=نشا=نشا ذرة=Cornstarch=خميرة غذائية
+=خميرة
+
+
+مستلزمات منزلية=Household=Houseware=Home Goods=Home Supplies=Home Care=Home Goods / Bedding=Household Products=Household Supplies=Household Items=Household Supplies/Trash Bags=Household Tools=Household Storage=Household/Storage=Household/Food Storage=Household/Servingware=Shoe Care=Lighting=رول=اكياس=بلاستيك=صحن=كوب=طقم=مروحة=كازيوني=Adhesives=Mattress=Home & Living=Yamish Basket=Home Organization=Home Essentials=Waste Management=الأدوات المنزلية
+
+مصليات=Prayer Mats=Prayer Rugs
+
+مطبخ (أجهزة)=بوتاجازات=Kitchen Appliances=Kitchen Appliance=Electronics / Kitchen Appliances=Home Appliances / Kitchen Appliances=Kitchen Appliances / Grills=Kitchen Appliances / Sandwich Makers=Kitchen Appliances / Waffle Makers=Espresso Machine=Coffee Machine=Air Fryer=Microwave Oven=Refrigerator=Refrigerators=Home Appliances - Refrigerator=Freezers=Washer-Dryers=Washing Machine=Washing Machine with Dryer=Washing Machines=Vacuum Cleaner=أجهزة مطبخ صغيرة=ميكروويف=مسطح بلت إن=Heating Appliance=القلايات=قلايات هوائية=غسالة اطباق=غساله اطباق=فرد اطباق=بوتاجاز
+
+مطبخ (أدوات طهي)=Cookware=Cookware & Kitchen Appliances=Cookware / Baking Set=Cookware / Baking Tray Set=Cookware / Cake Pan Set=Cookware / Frying Pans=Cookware / Kitchenware=Cookware / Pot Set=Cookware Set=Kitchenware / Cookware Set=Kitchenware / Cookware=Frying Pan=Fry Pan=Frying Pan Set=Frying Pans=Pan=Pan Set=Pans=Saucepan=Pot=Pots=Wok Pan=Pressure Cooker=Cookers=Cooktops/Hot Plates=Cooktops/Stoves=Gas Cooker=Gas Hob=أواني طهي=Kitchenware / Bakeware=Bakeware=Cookware/Bakeware=Bakeware / Trays=Bakeware Set=Baking Dish=Baking Dish Set=Baking Tray=Baking Tray Set=Baking Trays=Baking Trays Set=Casserole=مطبخ (أدوات)=Kitchenware=Kitchenware / Drinkware=Kitchenware / Food Storage=Kitchenware / Home Appliances=Kitchenware / Kettles=Kitchenware / Knives=Kitchenware / Knives & Cutting Boards=Kitchenware / Tableware=Kitchenware/Tableware=Kitchenware / Teapots=Kitchenware/Teapots=Household / Kitchenware=Household/Kitchenware=Household / Kitchenware =أدوات مطبخ=أدوات مائدة ومطبخ=أدوات منزلية=أدوات منزلية / مطبخ=Strainer=Roaster=مقلاية=
+
+مطبخ(مستلزمات)=Kitchen Tools=Kitchen Utensils=Kitchen Utensil=Kitchen Accessories=Kitchen Storage=Food Storage=Storage=Storage Containers=Storage Set=Storage=Cooler=Cooler Bags=Cooler Set=Ice Box=Aluminum Foil=Kitchen Towel=Kitchen Towels=Household / Kitchen Towels=فوط مطبخ=فوط مطبخ ورقية=Household/Kitchen supplies=Kitchen & Dining
+
+مفروشات ومنسوجات=Home Textiles / Bedding=Bedding=Bedding / Home Textiles=Bedding/Home Textiles=Blankets=Blanket=Blankets/Bedding=Home/Bedding=Kids Bedding=Home Textiles / Bedding / Kids Bedding=Home Textiles / Kids Bedding=Home Textiles / Baby Blankets=Home Textiles / Blankets=Home Textiles / Kids Blankets=Kids' Blanket=Baby Blanket=Home Textiles=Home Textiles / Curtains=Curtains=ستائر=Home Furnishings=Textile=Textile, Home Linen & Fashion=Home Textiles/Bath=Home Textiles - Bathrobes=Home Textiles - Kids Towels=Home Textiles - Towels=Home Textiles / Towels=Kids Home Textiles=Kids Towels=المفروشات=المفروشات العصرية=مفروشات=طقم سرير=ستارة=خدادية=فوطة قطن=مشايه=House Ware=Household/Textiles=Home & Living=لحاف=Bedspread=Pillow Cases=Cushion=برنس كيان=قطيفة سادة=برنس بورلا=ملاية فرداني=مفروشات قطن=بشكير=Grand House Bashkir=منشفة حمام=منتجات هوم ماكس (homemax) والمفروشات
+
+ملابس وأحذية=ملابس داخلية=ملابس =Apparel / Men's Clothing=Apparel=Clothing=Fashion=Men's Apparel=Women's Apparel=Kids' Apparel=Clothing / Shoes=Clothing/Accessories=Apparel/Clothing=Kids ملابس=Clothing=Kids' Clothing=ملابس رجالية=ملابس أطفال=ملابس بنات=أحذية=إكسسوارات إحرام=ملابس=Clothes=شوز=حذاء رياضي=Sweatshirt=Abayas=Underwear=Pyjama=Footwear=Babies Romper=Babies Romber=رومبر أطفال=سالوبيت أطفال=Mens Swimwear=مايوه رجالي=Boy Swimwear=مايوه أولادي=Clothing
+
+مناديل ورقية=Household / Paper Products=Paper Products=Paper Products/Tissues=Paper Products/Toilet Paper=Papers=Household Paper=Household Paper Products=Tissues=Tissue Roll=Facial Tissue=Facial Tissues=Tissues/Paper Products=مناديل وجه=Toilet Paper=Toilet Paper/Paper Products=Household / Toilet Paper=ورق تواليت=مناديل تواليت=Kitchen Paper=Kitchen Paper/Paper Towels=Kitchen Roll=Kitchen Rolls=Paper Towel=Paper Towels=Paper Towels/Kitchen Rolls=Paper Towels/Multipurpose Rolls=Multipurpose Roll=Multipurpose Towel=ورق مطبخ=ورقيات=رول=مطبخ=تواليت=مناديل=ورق=كلينكس=وايت=سوفت=روز=فوط=Prestige=برستيج=شرنك مناديل=مناديل برستيج=Xena=زينا جيب=Pocket Tissue=Papia Tissue=Soft Tissue=Zeina Facial Tissue=مناديل وجه=Toilet Roll=Tissue Roll=White Magic T/Roll=ورق تواليت=Kitchen Roll=White Magic K/Roll=ورق مطبخ
+
+منظفات منزلية=Household Cleaners=All-Purpose Cleaner=Multi-Purpose Cleaner=Multi-surface Cleaner=Cleaner=Cleaners=Household Cleaner=Household Cleaner & Disinfectant=Household Cleaner Gel=Household Cleaners/Air Fresheners=Household Cleaners/Antiseptics=مطهر عام=منظف=مذيب=دهون=حمام=ارضيات=كلور=مطهر=فلاش=سولفينت=كلين=مذيب دهون=فنيك=كلور ابيض=كلور الوان=منظف ومطهر=ملمع خشب=معطر أرضيات=معطر سائل=مزيل الشحوم=منظف المراحيض=Pledge=بليدج=بليدج سوبي=ملمع أخشاب=منظف الأسطح الخشبية=Stress 7x1=ستريس 7*1=متعدد الأغراض=Multi Purpose Cleaner=Dettol Liquid=ديتول سائل=مطهر ديتول=مذيب دهون=مطهر=منظف أرضيات=منظف حمامات=Toilet Blocks=General Toilet Blocks=معطر تواليت=بلوكات تواليت
+
+أطعمة -مكسرات ومقرمشات=Nuts=فول سوداني=لوز=بندق=كاجو=فستق=لب=مقرمشات=شيبسي=ناتشو=موسلي=Ramadan Yameesh=Dry Goods=زبيب=Raisins=Fox=فوكس=Crunchy=كرانشي=شوتس سوداني=Peanut Shots=فول سوداني=Protein Snacks=سناكس بروتين=Puffs=Icon Puffs=بافس=Temmy's Snack=تيميز=Snacks=أطعمة - صحية ومكسرات ومقرمشات
+
+Pets corner=pets food=Pet Supplies=Pets
+
+أدوات كهربية وحدايد=الأدوات الصحية=Electrical Accessory=Power Strips=Adapters=Tools/Hardware=Power Tools=Hardware & Tools=DIY | العدد و الآلات=DIY | Tools=I-Lock=مشترك كهرباء=Power Extension=وصلة كهرباء
+
+أدوات مدرسية ومكتبية=أدوات مكتبية=Books & Stationery=شنط مدرسية=School Supplies=Art Supplies=Office Supplies=ادوات مدرسية=Slippers=School Bag=pen=pencil=paper=قلم=ورق
+
+أجهزة وأدوات رياضية=أجهزة رياضية=Sports Equipment=أدوات رياضية=Sports/Outdoor=Kids' Bikes=Kids' Ride-ons=Sports & Leisure=Swimming Gear=Life Jacket=فيست سباحة=سترة نجاة
+
+أجهزة طبية وأدوية=Sports & Medical Support=Supplements=Herbal Remedy
+
+قسيمة مشتريات=Gift Voucher=Shopping Voucher=قسيمة مشتريات 50 جنيه=Charity Card=Coupon
+
+آلات موسيقية=آلات موسيقية=Ramadan Musical Instruments
+
+
+=======================================================
+
+مفروشات ومنسوجات=لحف فايبر=لحف كازابيلا=كوفرتة فايبر=كوفرتة سرير=كوفرتة اطفال=دفاية سرير=دفاية سرير اطفال=برنس فرداني=كفر انتريه=لحف قطيفة=لحف فرو=لحف اطفال=لحاف كازابيلا=bedspread=bedding=robe=home furnishings
+
+مستلزمات منزلية=ماسك طعام حراري=ترابيزة لاب توب=سباتيولا=شنطة معالق استانلس
+
+مطبخ (أجهزة)=بوتاجاز 4 شعلة=بوتاجاز استانلس
+
+أجهزة سمعية وكمبيوتر=ساوند صب=sound sub=HR-107
+
+مناديل ورقية=فاين سوبر تويل=paper towels=fine towel
+
+أجهزة تليفزيون والكترونيات=شاشة ليد=شاشة 32=frameless hd=hdmi=usb tv
+
+أطعمة -لحوم طازجة=مكعبات بقري=مفروم بقري=لحم بقري مفروم
+
+أطعمة -فواكه وخضروات=مانجو زبدية=مانجو جوليك=مانجو صديقة=ثوم صيني=ثوم مقشر
+
+أطعمة - أسماك=سيط=سمك باسا=سمك بوري=سمك بلطي=سمك مرجان=فيليه وقار=فيليه بلطي=سنجاري=سمك اسواني=سمك قنال
+
+أطعمة -مخبوزات وحلويات=بريوش=مشكل شرقي=كنافة نابلسي=تورتة
+
+أطعمة مجمدة=سمبوسك=اجنحة مجمدة=ستيك وندرفيل
+
+أطعمة -الألبان ومنتجاتها=جاموسي فاكيوم=قريش=ريكفور=مشكل بلدي=جبنة قريش
+
+أطعمة -زيوت ودهون=سمن جاموسي=سمن بقري=سمن نباتي=روابي سمن
+
+غسيل (مستلزمات)=استرتش منزلي=plastic wrap
+
+أجهزة تليفزيون والكترونيات=بطاريات aaa=حجر ريموت=battery aaa
+
+أطعمة -مشروبات=شاي كرك=نوكال=juice jar=karak
+
+أطعمة -عسل=نوكال
+
+أطعمة -طحينة\حلاوة\عسل\شكولاتة سبريد=حلاوة طحينية
+
+أطعمة -مخللات=طرشي=مخلل فاصوليا
+
+أطعمة -فراخ وطيور=اجنحة دجاج=دبوس دجاج
+
+أطعمة -فراخ وطيور=وراك رومي=ديك رومي=دبوس صدر رومي=فيليه رومي=رقاب رومي
+
+أطعمة -لحوم مصنعة وأجبان=فاكيوم=جبنة جيرسي=جبنة جودة=جبنة فلمنك=جبنة اسطنبولي
+
+أطعمة -حبوب وبقوليات=قمح=wheat
+
+ألعاب=عوامة=بونيه سباحة=جردل بحر=بورد سباحة=قارب اطفال=beach bucket=swim board=kids boat
+
+أجهزة وأدوات رياضية=شنطة بحر=ice box=polarbox
+
+مستلزمات منزلية=ice box=polarbox
+
+الأثاث=طقم اوت دور=patio set=wicker furniture=outdoor furniture
+
+منظفات منزلية=منظف سجاد=منظف حمامات=مزيل بقع السجاد
+
+مبيدات=مبيد للحشرات الزاحفة=مبيد للحشرات الطائرة
+
+أدوات مائدة=اكواب بلاستيك
+
+أطعمة -معلبات / تونة=مرقة دجاج=مكعبات مرقة
+
+أطعمة - توابل=مرقة دجاج=ماجي مرقة=broth cubesأطعمة -صلصات وتوابل=أطعمة -صلصات وتوابل
+الأثاث=الأثاث
+ملابس وأحذية=6Y-14Y
+أجهزة سمعية وكمبيوتر=Mobility
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=Hijabs
+أدوات كهربية وحدايد=Hand Tools
+مستحضرات تجميل=Hair Mist
+ألعاب=Summer Gear
+أطعمة -لحوم مصنعة وأجبان=أطعمة -لحوم مصنعة وأجبان
+أطعمة -فواكه وخضروات=أطعمة -فواكه وخضروات
+أطعمة -مخبوزات وحلويات=Donut
+أطعمة -الألبان ومنتجاتها=أطعمة -الألبان ومنتجاتها
+أطعمة -مشروبات=مياة شرب طبيعية
+أطعمة -لحوم طازجة=لحم نعام
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=طرح
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=ملابس وأحذية
+ألعاب=ألعاب
+ديكور منزلي=ديكور منزلي
+ديكور منزلي=ديكور منزلي
+أدوات مائدة=أدوات مائدة
+ديكور منزلي=ديكور منزلي
+ديكور منزلي=Tapestry
+البيبي (مستلزمات)=Stroller
+مستلزمات منزلية=Bath Mat
+أدوات كهربية وحدايد=أدوات كهربية وحدايد
+أدوات كهربية وحدايد=أدوات كهربية وحدايد
+أدوات مدرسية ومكتبية=أدوات مدرسية ومكتبية
+ملابس وأحذية=Summer Wear
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=Lingerie/Sleepwear
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=ملابس وأحذية
+ملابس وأحذية=ملابس وأحذية
+أدوات كهربية وحدايد=أدوات كهربية وحدايد
+أطعمة - توابل=أطعمة - توابل
+أطعمة -مشروبات=أطعمة -مشروبات
+أطعمة -لحوم مصنعة وأجبان=أطعمة -لحوم مصنعة وأجبان
+أطعمة -لحوم طازجة=أطعمة -لحوم طازجة
+أطعمة -لحوم مصنعة وأجبان=أطعمة -لحوم مصنعة وأجبان
+مستلزمات منزلية=مستلزمات منزلية
+أطعمة -حلوى=أطعمة -حلوى
+ملابس وأحذية=Socks
+مستلزمات منزلية=مستلزمات منزلية
+قسيمة مشتريات=Gift Cards
+أطعمة -فواكه وخضروات=أطعمة -فواكه وخضروات
+الأثاث=الأثاث
+ألعاب=ألعاب
+العناية الشخصية=العناية الشخصية
+أطعمة -لحوم مصنعة وأجبان=أطعمة -لحوم مصنعة وأجبان
+أطعمة -لحوم مصنعة وأجبان=أطعمة -لحوم مصنعة وأجبان
+أطعمة -لحوم مصنعة وأجبان=أطعمة -لحوم مصنعة وأجبان
+أطعمة -مخبوزات وحلويات=أطعمة -مخبوزات وحلويات
+أطعمة -لحوم مصنعة وأجبان=أطعمة -لحوم مصنعة وأجبان
+أطعمة -لحوم طازجة=أطعمة -لحوم طازجة
+أطعمة -لحوم طازجة=أطعمة -لحوم طازجة
+أطعمة -مكرونة=أطعمة -مكرونة
+أطعمة -فواكه وخضروات=أطعمة -فواكه وخضروات
+أطعمة -لحوم طازجة=أطعمة -لحوم طازجة
+أطعمة -لحوم مصنعة وأجبان=أطعمة -لحوم مصنعة وأجبان
+مستلزمات منزلية=مستلزمات منزلية
+أدوات تنظيف=أدوات تنظيف
