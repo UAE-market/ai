@@ -660,7 +660,7 @@ border-radius: 4px; /* إضافة انحناء بسيط للحدود (اختيا
   <body>
     <div class="lang-switch" id="lang-switch"> <button type="button" data-lang="ar"
         id="lang-btn-ar">العربية</button> <button type="button" data-lang="en"
-        id="lang-btn-en">english</button> </div>
+        id="lang-btn-en">English</button> </div>
     <div class="container">
       <div class="hero-banner">
         <div class="hero-content">
@@ -2839,14 +2839,14 @@ function openWithOverlay(url, flyerFileName, pageNo, flyerIdFromAttr, cropData) 
         top.forEach(item => {
             let span = document.createElement('div');
             span.className = 'ticker-item';
-            span.innerHTML = `<span class="badge">${item._discount_pct}%</span> ${item.product} - ${item.supermarket} (${formatPrice(item.currentPrice)} ${t('egp')})`;
+            span.innerHTML = `<span class="badge">${item._discount_pct}%</span> ${item.product} - ${item.supermarket} (${formatPrice(item.currentPrice)} ${t('AED')})`;
             track.appendChild(span);
         });
         if (top.length) {
             top.forEach(item => {
                 let span = document.createElement('div');
                 span.className = 'ticker-item';
-                span.innerHTML = `<span class="badge">${item._discount_pct}%</span> ${item.product} - ${item.supermarket} (${formatPrice(item.currentPrice)} ${t('egp')})`;
+                span.innerHTML = `<span class="badge">${item._discount_pct}%</span> ${item.product} - ${item.supermarket} (${formatPrice(item.currentPrice)} ${t('AED')})`;
                 track.appendChild(span);
             });
             track.classList.add('animate');
