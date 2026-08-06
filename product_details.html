@@ -2,11 +2,11 @@
 <html dir="rtl" lang="ar">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="referrer" content="no-referrer-when-downgrade">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>تفاصيل المنتج - عروض السوبرماركت</title>
+    <title id='page-title-tag'>تفاصيل المنتج - عروض السوبرماركت</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap"
+
       rel="stylesheet">
     <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
     <style>
@@ -381,16 +381,52 @@
             }
         }
     </style>
-  </head>
+    <script>
+    // ==================== COUNTRY CONFIG ====================
+    (function () {
+    // ── Country helpers ──
+    const COUNTRY        = window.__COUNTRY || { urlCode:'eg', englishName:'Egypt', arabicName:'مصر', lang:'arabic', coinEn:'EGP', coinAr:'ج', symbol:'eg', catalogPrefix:'', yabalashC:'eg' };
+    const CATALOG_PREFIX = COUNTRY.catalogPrefix ? COUNTRY.catalogPrefix + 'catalogs' : 'catalogs';
+    const COIN_EN        = COUNTRY.coinEn;
+    const COIN_AR        = COUNTRY.coinAr;
+    const YABALA_C       = COUNTRY.yabalashC;
+    function buildImageUrl(flyerId, pageNumber) {
+        return `https://www.mobappsbaker.com/${CATALOG_PREFIX}/thwr/offers/${flyerId}/${pageNumber}.jpg`;
+    }
+    function buildFlyerUrl(flyerId) {
+        return flyerId ? `https://www.yabalashoffers.com/flyer.php?d=${encodeURIComponent(flyerId)}&c=${YABALA_C}` : '#';
+    }
+      var COUNTRY_CONFIG = {
+        "eg":  { urlCode:"eg",  englishName:"Egypt", arabicName:"مصر",
+                 lang:"arabic",  coinEn:"EGP", coinAr:"ج",    symbol:"eg",  catalogPrefix:"",    yabalashC:"eg" },
+        "uae": { urlCode:"uae", englishName:"UAE",   arabicName:"الإمارات",
+                 lang:"english", coinEn:"AED", coinAr:"درهم", symbol:"ae",  catalogPrefix:"uae", yabalashC:"ae" }
+      };
+      var path     = (window.location.pathname || '').toLowerCase();
+      var host     = (window.location.hostname || '').toLowerCase();
+      var fileName = (path.split('/').pop() || '').replace(/\.[a-z0-9]+$/i, '');
+      var prefix   = (fileName.split(/[_\-]/)[0] || '').replace(/[^a-z]/g, '');
+      if (!COUNTRY_CONFIG[prefix]) prefix = (host.split('.')[0] || '').replace(/[^a-z]/g,'');
+      if (!COUNTRY_CONFIG[prefix]) prefix = 'eg';
+      window.__COUNTRY   = COUNTRY_CONFIG[prefix];
+      window.__COUNTRIES = COUNTRY_CONFIG;
+    })();
+  </script>
+</head>
   <body>
     <div class="split-layout" id="mainContainer">
       <div class="loading">جارٍ تحميل البيانات...</div>
     </div>
     <div id="imageModal" class="modal" onclick="handleModalClick(event)">
       <div class="close" onclick="closeModal()">×</div>
-      <button class="modal-nav modal-nav-prev" id="modalPrev" onclick="event.stopPropagation(); navigateModal(-1)" title="الصفحة السابقة"><i class="fas fa-chevron-right"></i></button>
-      <img id="modalImage" src="" alt="صورة مكبرة" onclick="event.stopPropagation()">
-      <button class="modal-nav modal-nav-next" id="modalNext" onclick="event.stopPropagation(); navigateModal(1)" title="الصفحة التالية"><i class="fas fa-chevron-left"></i></button>
+      <button class="modal-nav modal-nav-prev" id="modalPrev" onclick="event.stopPropagation(); navigateModal(-1)"
+
+        title="الصفحة السابقة"><i class="fas fa-chevron-right"></i></button> <img
+
+        id="modalImage" src="" alt="صورة مكبرة" onclick="event.stopPropagation()">
+      <button class="modal-nav modal-nav-next" id="modalNext" onclick="event.stopPropagation(); navigateModal(1)"
+
+        title="الصفحة التالية"><i class="fas fa-chevron-left"></i></button>
       <div class="modal-page-indicator" id="modalPageIndicator"></div>
     </div>
     <script>
@@ -405,75 +441,48 @@
 
         function renderCroppedImage(container, item) {
             container.innerHTML = '';
+            const fullImageUrl = getProductImageUrl(item);
 
-            // Build flyer info
-            const flyerId    = item.solution_key || '';
-            const pageNumber = (item.pageNo || item['اسم ملف الفلاير'] || '')
-                                .match(/page_(\d+)/)?.[1] || 
-                               (item.pageNo || '').replace(/[^0-9]/g, '') || '';
-
-            if (!flyerId || !pageNumber) {
-                container.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;color:white;font-size:1.4rem;">لا توجد صورة</div>';
+            if (!fullImageUrl) {
+                container.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;color:white;font-size:1.2rem;">لا توجد صورة</div>';
                 return;
             }
-
-            const fullImageUrl = `https://www.mobappsbaker.com/catalogs/thwr/offers/${flyerId}/${pageNumber}.jpg`;
 
             const x = parseFloat(item.X) || parseFloat(item.crop?.x) || 0;
             const y = parseFloat(item.Y) || parseFloat(item.crop?.y) || 0;
             const w = parseFloat(item['العرض']) || parseFloat(item.crop?.w) || 0;
             const h = parseFloat(item['الارتفاع']) || parseFloat(item.crop?.h) || 0;
 
-            const hasCrop = !(x === 0 && y === 0 && w === 0 && h === 0);
+            // No crop coords → show full image
+            if (x === 0 && y === 0 && w === 0 && h === 0) {
+                const el = document.createElement('img');
+                el.src = fullImageUrl;
+                el.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,0.3);';
+                container.appendChild(el);
+                return;
+            }
 
-            container.style.cssText = 'position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0b1a2e;';
+            // Use CSS background-image — works without CORS, no canvas needed
+            const PAD_LEFT   = 0.40;
+            const PAD_RIGHT  = 0.11;
+            const PAD_TOP    = 0.17;
+            const PAD_BOTTOM = 0.05;
 
-            // ── Strategy: load image via hidden <img> with crossOrigin disabled
-            // then crop using CSS background-size on a div
-            const probe = document.createElement('img');
-            probe.style.cssText = 'position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;';
-            probe.referrerPolicy = 'unsafe-url';
-            document.body.appendChild(probe);
+            const img = new Image();
+            // NO crossOrigin — mobappsbaker.com blocks CORS requests
 
-            probe.onerror = () => {
-                probe.remove();
-                // Server blocked direct load — show flyer via iframe fallback
-                container.innerHTML = '';
-                const flyerUrl = `https://www.yabalashoffers.com/flyer.php?d=${flyerId}&c=ae#page=${pageNumber}`;
-                const iframe = document.createElement('iframe');
-                iframe.src = flyerUrl;
-                iframe.style.cssText = 'width:100%;height:100%;border:none;border-radius:16px;';
-                iframe.setAttribute('allowfullscreen','true');
-                container.appendChild(iframe);
-
-                const badge = document.createElement('span');
-                badge.style.cssText = 'position:absolute;top:10px;right:10px;background:rgba(0,83,159,0.85);color:#fff;padding:3px 12px;border-radius:20px;font-size:0.75rem;z-index:2;pointer-events:none;';
-                badge.textContent = 'عرض الفلاير';
-                container.appendChild(badge);
+            img.onerror = function() {
+                container.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;color:white;font-size:1.2rem;">فشل تحميل الصورة</div>';
             };
 
-            probe.onload = () => {
-                probe.remove();
-                container.innerHTML = '';
+            img.onload = function() {
+                const iw = img.naturalWidth;
+                const ih = img.naturalHeight;
 
-                if (!hasCrop) {
-                    // No crop — show full image
-                    const el = document.createElement('img');
-                    el.src = fullImageUrl;
-                    el.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,0.3);';
-                    container.appendChild(el);
-                    return;
-                }
-
-                // Crop using CSS background-image
-                const iw = probe.naturalWidth  || 1000;
-                const ih = probe.naturalHeight || 1500;
-
-                const PAD_LEFT = 0.40, PAD_RIGHT = 0.11, PAD_TOP = 0.17, PAD_BOTTOM = 0.05;
-                const lx    = x <= 1 ? x * iw : x;
-                const ty    = y <= 1 ? y * ih : y;
-                const box_w = w <= 1 ? w * iw : w;
-                const box_h = h <= 1 ? h * ih : h;
+                const lx     = (x <= 1.0) ? x * iw : x;
+                const ty     = (y <= 1.0) ? y * ih : y;
+                const box_w  = (w <= 1.0) ? w * iw : w;
+                const box_h  = (h <= 1.0) ? h * ih : h;
 
                 const fl = Math.max(0,  lx - iw * PAD_LEFT);
                 const fr = Math.min(iw, lx + box_w + iw * PAD_RIGHT);
@@ -488,22 +497,30 @@
                     return;
                 }
 
-                const cw = fr - fl, ch = fb - ft;
-                const bsW = (iw / cw) * 100;
-                const bsH = (ih / ch) * 100;
-                const bpX = (iw - cw) > 0.5 ? (fl / (iw - cw)) * 100 : 0;
-                const bpY = (ih - ch) > 0.5 ? (ft / (ih - ch)) * 100 : 0;
+                const cw = fr - fl;
+                const ch = fb - ft;
 
-                container.style.cssText += ';display:flex;justify-content:center;align-items:center;';
+                const bgSizeW = (iw / cw) * 100;
+                const bgSizeH = (ih / ch) * 100;
+                const bgPosX  = (iw - cw) > 0.5 ? (fl / (iw - cw)) * 100 : 0;
+                const bgPosY  = (ih - ch) > 0.5 ? (ft / (ih - ch)) * 100 : 0;
+
                 const cropDiv = document.createElement('div');
                 cropDiv.style.cssText = [
-                    'width:100%', 'height:100%', 'max-width:95%', 'max-height:95%',
+                    'width:100%',
+                    'height:100%',
+                    'max-width:95%',
+                    'max-height:95%',
                     `background-image:url('${fullImageUrl}')`,
-                    `background-size:${bsW.toFixed(1)}% ${bsH.toFixed(1)}%`,
-                    `background-position:${bpX.toFixed(1)}% ${bpY.toFixed(1)}%`,
-                    'background-repeat:no-repeat', 'border-radius:16px',
+                    `background-size:${bgSizeW.toFixed(2)}% ${bgSizeH.toFixed(2)}%`,
+                    `background-position:${bgPosX.toFixed(2)}% ${bgPosY.toFixed(2)}%`,
+                    'background-repeat:no-repeat',
+                    'border-radius:16px',
                     'box-shadow:0 8px 25px rgba(0,0,0,0.3)'
                 ].join(';');
+
+                container.style.cssText += ';display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden;';
+                container.innerHTML = '';
                 container.appendChild(cropDiv);
 
                 const badge = document.createElement('span');
@@ -512,7 +529,7 @@
                 container.appendChild(badge);
             };
 
-            probe.src = fullImageUrl;
+            img.src = fullImageUrl;
         }
 
         function normalizeProductData(rawData) {
@@ -605,13 +622,13 @@
         function getProductImageUrl(item) {
             let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
             let pageNumber = item.pageNo?.match(/page_(\d+)/)?.[1] || '';
-            if (flyerId && pageNumber) return `https://www.mobappsbaker.com/catalogs/thwr/offers/${flyerId}/${pageNumber}.jpg`;
+            if (flyerId && pageNumber) return buildImageUrl(flyerId, pageNumber);
             return null;
         }
 
         function getGeneralFlyerUrl(item) {
             let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
-            if (flyerId) return `https://www.mobappsbaker.com/catalogs/thwr/offers/${flyerId}/1.jpg`;
+            if (flyerId) return buildImageUrl(flyerId, '1');
             return null;
         }
 
@@ -677,7 +694,7 @@
         }
 
         function buildPageUrl(flyerId, pageNum) {
-            return `https://www.mobappsbaker.com/catalogs/thwr/offers/${flyerId}/${pageNum}.jpg`;
+            return buildImageUrl(flyerId, pageNum);
         }
 
         // اكتشاف آخر صفحة في المجلد عبر binary-search بسيط
