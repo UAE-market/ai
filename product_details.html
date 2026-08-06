@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title id='page-title-tag'>تفاصيل المنتج - عروض السوبرماركت</title>
+    <title>تفاصيل المنتج - عروض السوبرماركت</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap"
 
@@ -381,38 +381,7 @@
             }
         }
     </style>
-    <script>
-    // ==================== COUNTRY CONFIG ====================
-    (function () {
-    // ── Country helpers ──
-    const COUNTRY        = window.__COUNTRY || { urlCode:'eg', englishName:'Egypt', arabicName:'مصر', lang:'arabic', coinEn:'EGP', coinAr:'ج', symbol:'eg', catalogPrefix:'', yabalashC:'eg' };
-    const CATALOG_PREFIX = COUNTRY.catalogPrefix ? COUNTRY.catalogPrefix + 'catalogs' : 'catalogs';
-    const COIN_EN        = COUNTRY.coinEn;
-    const COIN_AR        = COUNTRY.coinAr;
-    const YABALA_C       = COUNTRY.yabalashC;
-    function buildImageUrl(flyerId, pageNumber) {
-        return `https://www.mobappsbaker.com/${CATALOG_PREFIX}/thwr/offers/${flyerId}/${pageNumber}.jpg`;
-    }
-    function buildFlyerUrl(flyerId) {
-        return flyerId ? `https://www.yabalashoffers.com/flyer.php?d=${encodeURIComponent(flyerId)}&c=${YABALA_C}` : '#';
-    }
-      var COUNTRY_CONFIG = {
-        "eg":  { urlCode:"eg",  englishName:"Egypt", arabicName:"مصر",
-                 lang:"arabic",  coinEn:"EGP", coinAr:"ج",    symbol:"eg",  catalogPrefix:"",    yabalashC:"eg" },
-        "uae": { urlCode:"uae", englishName:"UAE",   arabicName:"الإمارات",
-                 lang:"english", coinEn:"AED", coinAr:"درهم", symbol:"ae",  catalogPrefix:"uae", yabalashC:"ae" }
-      };
-      var path     = (window.location.pathname || '').toLowerCase();
-      var host     = (window.location.hostname || '').toLowerCase();
-      var fileName = (path.split('/').pop() || '').replace(/\.[a-z0-9]+$/i, '');
-      var prefix   = (fileName.split(/[_\-]/)[0] || '').replace(/[^a-z]/g, '');
-      if (!COUNTRY_CONFIG[prefix]) prefix = (host.split('.')[0] || '').replace(/[^a-z]/g,'');
-      if (!COUNTRY_CONFIG[prefix]) prefix = 'eg';
-      window.__COUNTRY   = COUNTRY_CONFIG[prefix];
-      window.__COUNTRIES = COUNTRY_CONFIG;
-    })();
-  </script>
-</head>
+  </head>
   <body>
     <div class="split-layout" id="mainContainer">
       <div class="loading">جارٍ تحميل البيانات...</div>
@@ -550,7 +519,7 @@
             if (!data.currentPrice) data.currentPrice = data['السعر الحالي'] || data['current_price'] || data['price'] || 0;
             if (!data.originalPrice) data.originalPrice = data['السعر الأصلي'] || data['original_price'] || data['old_price'] || 0;
             if (!data._discount_pct) data._discount_pct = data['الخصم %'] || data['discount_pct'] || data['discount'] || 0;
-            if (!data.currency) data.currency = data['العملة'] || data['currency'] || 'EGP';
+            if (!data.currency) data.currency = data['العملة'] || data['currency'] || 'AED';
             if (!data.validUntil) data.validUntil = data['تاريخ انتهاء العرض'] || data['valid_until'] || data['expiry_date'] || 'غير متاح';
             if (!data.supermarket) data.supermarket = data['اسم السوبر ماركت'] || data['supermarket_name'] || 'غير معروف';
             if (!data.pageNo) data.pageNo = data['اسم ملف الفلاير'] || data['page_file'] || '';
@@ -622,13 +591,13 @@
         function getProductImageUrl(item) {
             let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
             let pageNumber = item.pageNo?.match(/page_(\d+)/)?.[1] || '';
-            if (flyerId && pageNumber) return buildImageUrl(flyerId, pageNumber);
+            if (flyerId && pageNumber) return `https://www.mobappsbaker.com/aecatalogs/thwr/offers/${flyerId}/${pageNumber}.jpg`;
             return null;
         }
 
         function getGeneralFlyerUrl(item) {
             let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
-            if (flyerId) return buildImageUrl(flyerId, '1');
+            if (flyerId) return `https://www.mobappsbaker.com/aecatalogs/thwr/offers/${flyerId}/1.jpg`;
             return null;
         }
 
@@ -694,7 +663,7 @@
         }
 
         function buildPageUrl(flyerId, pageNum) {
-            return buildImageUrl(flyerId, pageNum);
+            return `https://www.mobappsbaker.com/aecatalogs/thwr/offers/${flyerId}/${pageNum}.jpg`;
         }
 
         // اكتشاف آخر صفحة في المجلد عبر binary-search بسيط
@@ -808,7 +777,7 @@
                         <div class="product-title">${productData.product}</div>
                     </div>
                     <div class="price-box">
-                        <div><span class="current-price">${productData.currentPrice} ${productData.currency}</span><span class="original-price">${productData.originalPrice} ج.م</span></div>
+                        <div><span class="current-price">${productData.currentPrice} ${productData.currency}</span><span class="original-price">${productData.originalPrice} AED</span></div>
                         <span class="discount-badge">-${productData._discount_pct}%</span>
                     </div>
                     <div class="actions-row">
