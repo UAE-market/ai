@@ -384,20 +384,6 @@
     <script>
     // ── Country config ──────────────────────────────────────────────────
     (function () {
-    // ── Country helpers ─────────────────────────────────────────────────
-    var COUNTRY        = window.__COUNTRY || { urlCode:'eg', englishName:'Egypt', arabicName:'مصر', lang:'arabic', coinEn:"EGP", coinAr:'ج', symbol:'eg', catalogPrefix:'', yabalashC:'eg' };
-    var CATALOG_PREFIX = COUNTRY.catalogPrefix ? (COUNTRY.catalogPrefix + 'catalogs') : 'catalogs';
-    var COIN_EN        = COUNTRY.coinEn;
-    var COIN_AR        = COUNTRY.coinAr;
-    var YABALA_C       = COUNTRY.yabalashC;
-    function buildImageUrl(fid, pnum) {
-        return 'https://www.mobappsbaker.com/' + CATALOG_PREFIX + '/thwr/offers/' + fid + '/' + pnum + '.jpg';
-    }
-    function buildFlyerUrl(fid) {
-        return fid ? ('https://www.yabalashoffers.com/flyer.php?d=' + encodeURIComponent(fid) + '&c=' + YABALA_C) : '#';
-    }
-    // ────────────────────────────────────────────────────────────────────
-
       var CC = {
         "eg":  { urlCode:"eg",  englishName:"Egypt",  arabicName:"مصر",       lang:"arabic",  coinEn:"EGP", coinAr:"ج",    symbol:"eg",  catalogPrefix:"",    yabalashC:"eg" },
         "uae": { urlCode:"uae", englishName:"UAE",    arabicName:"الإمارات",   lang:"english", coinEn:"AED", coinAr:"درهم", symbol:"ae",  catalogPrefix:"uae", yabalashC:"ae" }
@@ -440,6 +426,21 @@
       <div class="modal-page-indicator" id="modalPageIndicator"></div>
     </div>
     <script>
+    // ── Country helpers (global) ──────────────────────────────────────
+    var __C            = window.__COUNTRY || { urlCode:'eg', englishName:'Egypt', arabicName:'مصر', lang:'arabic', coinEn:'EGP', coinAr:'ج', symbol:'eg', catalogPrefix:'', yabalashC:'eg' };
+    var CATALOG_PREFIX = __C.catalogPrefix ? (__C.catalogPrefix + 'catalogs') : 'catalogs';
+    var COIN_EN        = __C.coinEn;
+    var COIN_AR        = __C.coinAr;
+    var YABALA_C       = __C.yabalashC;
+    var COUNTRY        = __C;
+    function buildImageUrl(fid, pnum) {
+        return 'https://www.mobappsbaker.com/' + CATALOG_PREFIX + '/thwr/offers/' + fid + '/' + pnum + '.jpg';
+    }
+    function buildFlyerUrl(fid) {
+        return fid ? ('https://www.yabalashoffers.com/flyer.php?d=' + encodeURIComponent(fid) + '&c=' + YABALA_C) : '#';
+    }
+    // ──────────────────────────────────────────────────────────────────
+
         let productData = null;
         let supermarketData = {};
 
