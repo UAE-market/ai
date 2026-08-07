@@ -706,15 +706,14 @@
         }
 
         function getProductImageUrl(item) {
-            let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
-            let pageNumber = item.pageNo?.match(/page_(\d+)/)?.[1] || '';
-            if (flyerId && pageNumber) return buildImageUrl(flyerId, pageNumber);
+            const info = getFlyerInfo(item);
+            if (info.flyerId && info.pageNum) return buildImageUrl(info.flyerId, info.pageNum);
             return null;
         }
 
         function getGeneralFlyerUrl(item) {
-            let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
-            if (flyerId) return buildImageUrl(flyerId, '1');
+            const info = getFlyerInfo(item);
+            if (info.flyerId) return buildImageUrl(info.flyerId, '1');
             return null;
         }
 
@@ -767,15 +766,23 @@
 
         // استخرج flyerId و pageNum من productData
         function getFlyerInfo(item) {
-            const folder = item['اسم المجلد الفرعي'] || item.subFolder || item.folder_id || '';
-            const pageFile = item['اسم ملف الفلاير'] || item.pageNo || '';
-            // flyerId: من عمود المجلد الفرعي، أو من pageNo (flyer_(\d+))
-            let flyerId = String(folder).trim() ||
-                          (pageFile.match(/flyer_(\d+)/)?.[1]) ||
-                          item.solution_key || '';
-            // pageNum: من اسم ملف الفلاير (page_(\d+)) أو (_(\d+)\.)
-            let pageNum = parseInt(pageFile.match(/page_(\d+)/)?.[1] ||
-                                   pageFile.match(/_(\d+)\./)?.[1] || '1', 10);
+            // flyerId: solution_key is the most reliable (set by index_B transformRows)
+            let flyerId = item.solution_key ||
+                          item['اسم المجلد الفرعي'] ||
+                          item.subFolder || item.folder_id || '';
+            // Remove "flyer_" prefix if present
+            flyerId = String(flyerId).replace(/^flyer_/i, '').trim();
+
+            // pageNum: from pageNo field (e.g. "page_5.jpg" → 5)
+            const pageFile = item.pageNo || item['اسم ملف الفلاير'] || item.page_file || '';
+            let pageNum = parseInt(
+                pageFile.match(/page_(\d+)/)?.[1] ||
+                pageFile.match(/_(\d+)\./)?.[1]  ||
+                pageFile.replace(/[^0-9]/g, '')     ||
+                '1'
+            , 10);
+            if (isNaN(pageNum) || pageNum < 1) pageNum = 1;
+
             return { flyerId, pageNum };
         }
 
