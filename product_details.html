@@ -656,6 +656,19 @@
                 
                 if (!productData.updateDate) productData.updateDate = null;
                 
+                // DEBUG
+                var info = getFlyerInfo(productData);
+                console.log('🔍 RAW sessionStorage:', JSON.stringify({
+                    pageNo: rawData.pageNo,
+                    solution_key: rawData.solution_key,
+                    folder: rawData['اسم المجلد الفرعي'],
+                    pageFile: rawData['اسم ملف الفلاير'],
+                    X: rawData.X, Y: rawData.Y,
+                    crop: rawData.crop
+                }));
+                console.log('🔍 getFlyerInfo result:', info);
+                console.log('🔍 imageUrl:', getProductImageUrl(productData));
+                
                 return true;
             } catch(e) {
                 console.error('خطأ في تحليل بيانات المنتج', e);
