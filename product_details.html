@@ -483,7 +483,23 @@
             // NO crossOrigin — mobappsbaker.com blocks CORS requests
 
             img.onerror = function() {
-                container.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;color:white;font-size:1.2rem;">فشل تحميل الصورة</div>';
+                // Direct load blocked — try CORS proxy
+                var proxyUrl = 'https://corsproxy.io/?url=' + encodeURIComponent(fullImageUrl);
+                fetch(proxyUrl)
+                    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.blob(); })
+                    .then(function(blob){
+                        var blobUrl = URL.createObjectURL(blob);
+                        // Re-trigger onload by creating a new image with the blob URL
+                        var img3 = new Image();
+                        img3.onload = function(){
+                            // Replace src in current img and fire the same onload logic
+                            // by re-calling with blob URL
+                            renderWithUrl(container, item, blobUrl, x, y, w, h);
+                        };
+                        img3.onerror = function(){ showImageError(container); };
+                        img3.src = blobUrl;
+                    })
+                    .catch(function(){ showImageError(container); });
             };
 
             img.onload = function() {
@@ -541,6 +557,45 @@
             };
 
             img.src = fullImageUrl;
+        }
+
+        function showImageError(container) {
+            container.style.background = '#0b1a2e';
+            container.innerHTML = '<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;' +
+                'width:100%;height:100%;color:#888;gap:12px;">' +
+                '<i class="fas fa-image" style="font-size:3rem;opacity:0.3;"></i>' +
+                '<span style="font-size:0.9rem;">الصورة غير متاحة</span></div>';
+        }
+
+        function renderWithUrl(container, item, imageUrl, x, y, w, h) {
+            var tmpImg = new Image();
+            tmpImg.onload = function() {
+                var iw = tmpImg.naturalWidth, ih = tmpImg.naturalHeight;
+                container.innerHTML = '';
+                var PAD_LEFT=0.40, PAD_RIGHT=0.11, PAD_TOP=0.17, PAD_BOTTOM=0.05;
+                var lx=(x<=1)?x*iw:x, ty=(y<=1)?y*ih:y, bw=(w<=1)?w*iw:w, bh=(h<=1)?h*ih:h;
+                var fl=Math.max(0,lx-iw*PAD_LEFT), fr=Math.min(iw,lx+bw+iw*PAD_RIGHT);
+                var ft=Math.max(0,ty-ih*PAD_TOP),   fb=Math.min(ih,ty+bh+ih*PAD_BOTTOM);
+                if (fr<=fl||fb<=ft||(!x&&!y&&!w&&!h)) {
+                    var el=document.createElement('img');
+                    el.src=imageUrl;
+                    el.style.cssText='max-width:100%;max-height:100%;object-fit:contain;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,0.3);';
+                    container.appendChild(el); return;
+                }
+                var cw=fr-fl, ch=fb-ft;
+                var bsW=(iw/cw)*100, bsH=(ih/ch)*100;
+                var bpX=(iw-cw)>0.5?(fl/(iw-cw))*100:0, bpY=(ih-ch)>0.5?(ft/(ih-ch))*100:0;
+                container.style.cssText+='display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden;';
+                var d=document.createElement('div');
+                d.style.cssText='width:100%;height:100%;max-width:95%;max-height:95%;' +
+                    'background-image:url('+imageUrl+');' +
+                    'background-size:'+bsW.toFixed(1)+'% '+bsH.toFixed(1)+'%;' +
+                    'background-position:'+bpX.toFixed(1)+'% '+bpY.toFixed(1)+'%;' +
+                    'background-repeat:no-repeat;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,0.3);';
+                container.appendChild(d);
+            };
+            tmpImg.onerror = function(){ showImageError(container); };
+            tmpImg.src = imageUrl;
         }
 
         function normalizeProductData(rawData) {
@@ -863,11 +918,11 @@
                 <div class="flyer-images-row">
                     <div class="flyer-image-box" onclick="openModal('${fullFlyerUrl || ''}', '${flyerInfo.flyerId}', ${flyerInfo.pageNum})">
                         <h4><i class="fas fa-file-image"></i> الصفحة الحالية</h4>
-                        ${fullFlyerUrl ? `<img src="${fullFlyerUrl}" alt="الصفحة الحالية" onerror="this.src='https://via.placeholder.com/300?text=No+Image'">` : '<i class="fas fa-image" style="font-size:3rem;color:#ccc"></i><p>لا توجد صورة</p>'}
+                        ${fullFlyerUrl ? `<img src="${fullFlyerUrl}" alt="الصفحة الحالية" onerror="this.style.display='none'">` : '<i class="fas fa-image" style="font-size:3rem;color:#ccc"></i><p>لا توجد صورة</p>'}
                     </div>
                     <div class="flyer-image-box" onclick="openModal('${generalImageUrl || ''}', '${flyerInfo.flyerId}', 1)">
                         <h4><i class="fas fa-book-open"></i> غلاف الفلاير</h4>
-                        ${generalImageUrl ? `<img src="${generalImageUrl}" alt="غلاف الفلاير" onerror="this.src='https://via.placeholder.com/300?text=No+Cover'">` : '<i class="fas fa-image" style="font-size:3rem;color:#ccc"></i><p>لا توجد صورة</p>'}
+                        ${generalImageUrl ? `<img src="${generalImageUrl}" alt="غلاف الفلاير" onerror="this.style.display='none'">` : '<i class="fas fa-image" style="font-size:3rem;color:#ccc"></i><p>لا توجد صورة</p>'}
                     </div>
                 </div>
                 <button class="back-btn" onclick="window.close()"><i class="fas fa-arrow-right"></i> إغلاق</button>
