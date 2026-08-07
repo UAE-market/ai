@@ -425,7 +425,7 @@
 </head>
   <body>
     <div class="split-layout" id="mainContainer">
-      <div class="loading">جارٍ تحميل البيانات...</div>
+      <div class="loading" style="display:none;">جارٍ تحميل البيانات...</div>
     </div>
     <div id="imageModal" class="modal" onclick="handleModalClick(event)">
       <div class="close" onclick="closeModal()">×</div>
@@ -577,6 +577,15 @@
         function loadProductFromSession() {
             const stored = sessionStorage.getItem('selectedProduct');
             if (!stored) {
+                document.getElementById('mainContainer').innerHTML =
+                    '<div style="text-align:center;padding:60px;font-family:Cairo,sans-serif;">' +
+                    '<div style="font-size:3rem;margin-bottom:20px;">⚠️</div>' +
+                    '<div style="font-size:1.2rem;color:#555;">لم يتم تحديد منتج.<br>يرجى العودة وتحديد منتج من القائمة.</div>' +
+                    '<button onclick="window.close()" style="margin-top:20px;padding:10px 30px;background:#00539F;color:white;border:none;border-radius:8px;font-family:Cairo,sans-serif;font-size:1rem;cursor:pointer;">إغلاق</button>' +
+                    '</div>';
+                return false;
+            }
+            if (!stored) {
                 showError('لم يتم العثور على بيانات المنتج.');
                 return false;
             }
@@ -601,7 +610,18 @@
 
         async function loadSupermarketData() {
             try {
-                const response = await fetch('supermarkets.xlsx');
+                // Timeout after 4 seconds — file may not exist on this deployment
+                const controller = new AbortController();
+                const tid = setTimeout(() => controller.abort(), 4000);
+                let response;
+                try {
+                    response = await fetch('supermarkets.xlsx', { signal: controller.signal });
+                } catch(e) {
+                    clearTimeout(tid);
+                    console.warn('supermarkets.xlsx غير موجود أو انتهت المهلة');
+                    return;
+                }
+                clearTimeout(tid);
                 if (!response.ok) {
                     console.warn('لم يتم العثور على ملف supermarkets.xlsx');
                     return;
