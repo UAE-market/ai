@@ -394,10 +394,15 @@
         var fileName = (path.split('/').pop() || '').replace(/\.[a-z0-9]+$/i, '');
         var seg0 = path.replace(/^\/+/,'').split('/')[0] || '';
         var detected = null;
+        // Split hostname: 'uae-market.github.io' → ['uae','market','github','io']
+        var hostParts = host.replace(/[-\.]/g, ' ').split(' ');
+        var filenameParts = fileName.split(/[_-]/);
+        var allParts = hostParts.concat([seg0]).concat(filenameParts);
         Object.keys(CC).forEach(function(k) {
           if (detected) return;
-          var re = new RegExp('^' + k + '([^a-z]|$)', 'i');
-          if (re.test(host) || re.test(seg0) || re.test(fileName.split('_')[0])) detected = k;
+          for (var i = 0; i < allParts.length; i++) {
+            if (allParts[i] === k) { detected = k; break; }
+          }
         });
         if (!detected) detected = 'eg';
         window.__COUNTRY = CC[detected];
@@ -483,23 +488,23 @@
             // NO crossOrigin — mobappsbaker.com blocks CORS requests
 
             img.onerror = function() {
-                // Direct load blocked — try CORS proxy
-                var proxyUrl = 'https://corsproxy.io/?url=' + encodeURIComponent(fullImageUrl);
-                fetch(proxyUrl)
-                    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.blob(); })
-                    .then(function(blob){
-                        var blobUrl = URL.createObjectURL(blob);
-                        // Re-trigger onload by creating a new image with the blob URL
-                        var img3 = new Image();
-                        img3.onload = function(){
-                            // Replace src in current img and fire the same onload logic
-                            // by re-calling with blob URL
+                // Direct load blocked — try proxy chain
+                var proxies = [
+                    'https://api.allorigins.win/raw?url=' + encodeURIComponent(fullImageUrl),
+                    'https://corsproxy.io/?url=' + encodeURIComponent(fullImageUrl),
+                    'https://proxy.cors.sh/' + fullImageUrl
+                ];
+                function tryProxy(idx) {
+                    if (idx >= proxies.length) { showImageError(container); return; }
+                    fetch(proxies[idx])
+                        .then(function(r){ if(!r.ok) throw new Error(r.status); return r.blob(); })
+                        .then(function(blob){
+                            var blobUrl = URL.createObjectURL(blob);
                             renderWithUrl(container, item, blobUrl, x, y, w, h);
-                        };
-                        img3.onerror = function(){ showImageError(container); };
-                        img3.src = blobUrl;
-                    })
-                    .catch(function(){ showImageError(container); });
+                        })
+                        .catch(function(){ tryProxy(idx + 1); });
+                }
+                tryProxy(0);
             };
 
             img.onload = function() {
@@ -655,19 +660,6 @@
                 productData = normalizeProductData(rawData);
                 
                 if (!productData.updateDate) productData.updateDate = null;
-                
-                // DEBUG
-                var info = getFlyerInfo(productData);
-                console.log('🔍 RAW sessionStorage:', JSON.stringify({
-                    pageNo: rawData.pageNo,
-                    solution_key: rawData.solution_key,
-                    folder: rawData['اسم المجلد الفرعي'],
-                    pageFile: rawData['اسم ملف الفلاير'],
-                    X: rawData.X, Y: rawData.Y,
-                    crop: rawData.crop
-                }));
-                console.log('🔍 getFlyerInfo result:', info);
-                console.log('🔍 imageUrl:', getProductImageUrl(productData));
                 
                 return true;
             } catch(e) {
