@@ -484,7 +484,6 @@
         }
 
         function showFlyerViewer(container, info, flyerUrl) {
-            console.log('showFlyerViewer:', info, flyerUrl);
             container.innerHTML = '';
             container.style.cssText = 'position:relative;overflow:hidden;background:#111827;border-radius:16px;cursor:pointer;';
 
@@ -589,6 +588,9 @@
 
         function loadProductFromSession() {
             const stored = sessionStorage.getItem('selectedProduct');
+            // Clear immediately so stale data never shows on back-navigation
+            sessionStorage.removeItem('selectedProduct');
+            sessionStorage.removeItem('selectedProductKey');
             if (!stored) {
                 document.getElementById('mainContainer').innerHTML =
                     '<div style="text-align:center;padding:60px;font-family:Cairo,sans-serif;">' +
