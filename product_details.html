@@ -457,111 +457,64 @@
 
         function renderCroppedImage(container, item) {
             container.innerHTML = '';
-            const fullImageUrl = getProductImageUrl(item);
+            container.style.cssText = 'position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0b1a2e;';
 
-            if (!fullImageUrl) {
-                container.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;color:white;font-size:1.2rem;">لا توجد صورة</div>';
+            const info = getFlyerInfo(item);
+            if (!info.flyerId || !info.pageNum) {
+                showImageError(container);
                 return;
             }
 
-            const x = parseFloat(item.X) || parseFloat(item.crop?.x) || 0;
-            const y = parseFloat(item.Y) || parseFloat(item.crop?.y) || 0;
-            const w = parseFloat(item['العرض']) || parseFloat(item.crop?.w) || 0;
-            const h = parseFloat(item['الارتفاع']) || parseFloat(item.crop?.h) || 0;
+            const directUrl  = buildImageUrl(info.flyerId, info.pageNum);
+            const flyerPageUrl = buildFlyerUrl(info.flyerId) + '#page=' + info.pageNum;
 
-            // No crop coords → show full image
-            if (x === 0 && y === 0 && w === 0 && h === 0) {
-                const el = document.createElement('img');
-                el.src = fullImageUrl;
-                el.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,0.3);';
-                container.appendChild(el);
-                return;
-            }
+            const x = parseFloat(item.X)           || parseFloat(item.crop && item.crop.x) || 0;
+            const y = parseFloat(item.Y)           || parseFloat(item.crop && item.crop.y) || 0;
+            const w = parseFloat(item['العرض'])    || parseFloat(item.crop && item.crop.w) || 0;
+            const h = parseFloat(item['الارتفاع']) || parseFloat(item.crop && item.crop.h) || 0;
 
-            // Use CSS background-image — works without CORS, no canvas needed
-            const PAD_LEFT   = 0.40;
-            const PAD_RIGHT  = 0.11;
-            const PAD_TOP    = 0.17;
-            const PAD_BOTTOM = 0.05;
-
+            // Step 1: try direct image load
             const img = new Image();
-            // NO crossOrigin — mobappsbaker.com blocks CORS requests
-
-            img.onerror = function() {
-                // Direct load blocked — try proxy chain
-                var proxies = [
-                    'https://api.allorigins.win/raw?url=' + encodeURIComponent(fullImageUrl),
-                    'https://corsproxy.io/?url=' + encodeURIComponent(fullImageUrl),
-                    'https://proxy.cors.sh/' + fullImageUrl
-                ];
-                function tryProxy(idx) {
-                    if (idx >= proxies.length) { showImageError(container); return; }
-                    fetch(proxies[idx])
-                        .then(function(r){ if(!r.ok) throw new Error(r.status); return r.blob(); })
-                        .then(function(blob){
-                            var blobUrl = URL.createObjectURL(blob);
-                            renderWithUrl(container, item, blobUrl, x, y, w, h);
-                        })
-                        .catch(function(){ tryProxy(idx + 1); });
-                }
-                tryProxy(0);
-            };
 
             img.onload = function() {
-                const iw = img.naturalWidth;
-                const ih = img.naturalHeight;
-
-                const lx     = (x <= 1.0) ? x * iw : x;
-                const ty     = (y <= 1.0) ? y * ih : y;
-                const box_w  = (w <= 1.0) ? w * iw : w;
-                const box_h  = (h <= 1.0) ? h * ih : h;
-
-                const fl = Math.max(0,  lx - iw * PAD_LEFT);
-                const fr = Math.min(iw, lx + box_w + iw * PAD_RIGHT);
-                const ft = Math.max(0,  ty - ih * PAD_TOP);
-                const fb = Math.min(ih, ty + box_h + ih * PAD_BOTTOM);
-
-                if (fr <= fl || fb <= ft) {
-                    const el = document.createElement('img');
-                    el.src = fullImageUrl;
-                    el.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:16px;';
-                    container.appendChild(el);
-                    return;
-                }
-
-                const cw = fr - fl;
-                const ch = fb - ft;
-
-                const bgSizeW = (iw / cw) * 100;
-                const bgSizeH = (ih / ch) * 100;
-                const bgPosX  = (iw - cw) > 0.5 ? (fl / (iw - cw)) * 100 : 0;
-                const bgPosY  = (ih - ch) > 0.5 ? (ft / (ih - ch)) * 100 : 0;
-
-                const cropDiv = document.createElement('div');
-                cropDiv.style.cssText = [
-                    'width:100%',
-                    'height:100%',
-                    'max-width:95%',
-                    'max-height:95%',
-                    `background-image:url('${fullImageUrl}')`,
-                    `background-size:${bgSizeW.toFixed(2)}% ${bgSizeH.toFixed(2)}%`,
-                    `background-position:${bgPosX.toFixed(2)}% ${bgPosY.toFixed(2)}%`,
-                    'background-repeat:no-repeat',
-                    'border-radius:16px',
-                    'box-shadow:0 8px 25px rgba(0,0,0,0.3)'
-                ].join(';');
-
-                container.style.cssText += ';display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden;';
-                container.innerHTML = '';
-                container.appendChild(cropDiv);
-
-                const badge = document.createElement('span');
-                badge.style.cssText = 'position:absolute;bottom:15px;right:15px;background:rgba(0,0,0,0.7);color:#fff;padding:4px 14px;border-radius:20px;font-size:0.8rem;pointer-events:none;z-index:2;';
-                badge.innerHTML = '<i class="fas fa-crop-alt"></i> مقتصصة';
-                container.appendChild(badge);
+                renderWithUrl(container, item, directUrl, x, y, w, h);
             };
 
-            img.src = fullImageUrl;
+            img.onerror = function() {
+                // Step 2: server blocks direct access — show flyer iframe
+                // The iframe loads in browser context so images work
+                container.innerHTML = '';
+                container.style.cssText = 'position:relative;overflow:hidden;background:#000;';
+
+                const label = document.createElement('div');
+                label.style.cssText = 'position:absolute;top:8px;right:8px;z-index:10;background:rgba(0,83,159,0.85);color:white;padding:3px 12px;border-radius:20px;font-size:0.75rem;font-family:Cairo,sans-serif;pointer-events:none;';
+                label.textContent = 'صفحة ' + info.pageNum + ' من الفلاير';
+                container.appendChild(label);
+
+                // Use postMessage approach: load flyer then navigate to page
+                const iframe = document.createElement('iframe');
+                // yabalashoffers supports ?page= or #page= param
+                const iframeSrc = buildFlyerUrl(info.flyerId) + '&page=' + info.pageNum;
+                iframe.src = iframeSrc;
+                iframe.style.cssText = 'width:300%;height:300%;border:none;transform:scale(0.333);transform-origin:top left;pointer-events:none;';
+                iframe.setAttribute('scrolling', 'no');
+                iframe.setAttribute('frameborder', '0');
+
+                const wrapper = document.createElement('div');
+                wrapper.style.cssText = 'width:100%;height:100%;overflow:hidden;position:relative;';
+                wrapper.appendChild(iframe);
+                container.appendChild(wrapper);
+
+                // Add "open full" button
+                const openBtn = document.createElement('a');
+                openBtn.href = buildFlyerUrl(info.flyerId);
+                openBtn.target = '_blank';
+                openBtn.style.cssText = 'position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#00539F;color:white;padding:6px 18px;border-radius:20px;font-size:0.8rem;font-family:Cairo,sans-serif;text-decoration:none;z-index:10;';
+                openBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> عرض الفلاير كاملاً';
+                container.appendChild(openBtn);
+            };
+
+            img.src = directUrl;
         }
 
         function showImageError(container) {
