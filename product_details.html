@@ -466,6 +466,7 @@
             }
 
             const directUrl = buildImageUrl(info.flyerId, info.pageNum);
+            console.log('🖼️ renderCroppedImage:', {flyerId: info.flyerId, pageNum: info.pageNum, directUrl, pageNo: item.pageNo, X: item.X, Y: item.Y, crop: item.crop});
             const x = parseFloat(item.X)           || (item.crop ? parseFloat(item.crop.x) : 0) || 0;
             const y = parseFloat(item.Y)           || (item.crop ? parseFloat(item.crop.y) : 0) || 0;
             const w = parseFloat(item['العرض'])    || (item.crop ? parseFloat(item.crop.w) : 0) || 0;
