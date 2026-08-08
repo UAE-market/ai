@@ -465,56 +465,66 @@
                 return;
             }
 
-            const directUrl  = buildImageUrl(info.flyerId, info.pageNum);
-            const flyerPageUrl = buildFlyerUrl(info.flyerId) + '#page=' + info.pageNum;
+            const directUrl = buildImageUrl(info.flyerId, info.pageNum);
+            const x = parseFloat(item.X)           || (item.crop ? parseFloat(item.crop.x) : 0) || 0;
+            const y = parseFloat(item.Y)           || (item.crop ? parseFloat(item.crop.y) : 0) || 0;
+            const w = parseFloat(item['العرض'])    || (item.crop ? parseFloat(item.crop.w) : 0) || 0;
+            const h = parseFloat(item['الارتفاع']) || (item.crop ? parseFloat(item.crop.h) : 0) || 0;
 
-            const x = parseFloat(item.X)           || parseFloat(item.crop && item.crop.x) || 0;
-            const y = parseFloat(item.Y)           || parseFloat(item.crop && item.crop.y) || 0;
-            const w = parseFloat(item['العرض'])    || parseFloat(item.crop && item.crop.w) || 0;
-            const h = parseFloat(item['الارتفاع']) || parseFloat(item.crop && item.crop.h) || 0;
+            // Show loading spinner
+            container.innerHTML = '<div style="color:#aaa;font-size:0.9rem;font-family:Cairo,sans-serif;">جارٍ تحميل الصورة...</div>';
 
-            // Step 1: try direct image load
-            const img = new Image();
+            // Step 1: warm up session by loading yabalashoffers flyer page in hidden iframe
+            const warmupIframe = document.createElement('iframe');
+            warmupIframe.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:-9999px;left:-9999px;';
+            warmupIframe.src = buildFlyerUrl(info.flyerId);
+            document.body.appendChild(warmupIframe);
 
-            img.onload = function() {
-                renderWithUrl(container, item, directUrl, x, y, w, h);
+            // Step 2: after iframe loads (session cookie set), load the actual image
+            warmupIframe.onload = function() {
+                const img = new Image();
+                img.onload = function() {
+                    warmupIframe.remove();
+                    container.innerHTML = '';
+                    renderWithUrl(container, item, directUrl, x, y, w, h);
+                };
+                img.onerror = function() {
+                    warmupIframe.remove();
+                    // Session warmup didn't help — show flyer link fallback
+                    container.innerHTML = '';
+                    container.style.background = '#0b1a2e';
+
+                    const msgDiv = document.createElement('div');
+                    msgDiv.style.cssText = 'display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;gap:16px;';
+
+                    const icon = document.createElement('i');
+                    icon.className = 'fas fa-image';
+                    icon.style.cssText = 'font-size:3rem;color:rgba(255,255,255,0.2);';
+                    msgDiv.appendChild(icon);
+
+                    const txt = document.createElement('div');
+                    txt.style.cssText = 'color:#aaa;font-size:0.9rem;font-family:Cairo,sans-serif;text-align:center;padding:0 20px;';
+                    txt.textContent = 'اضغط لمشاهدة الفلاير';
+                    msgDiv.appendChild(txt);
+
+                    const btn = document.createElement('a');
+                    btn.href = buildFlyerUrl(info.flyerId);
+                    btn.target = '_blank';
+                    btn.style.cssText = 'background:#00539F;color:white;padding:10px 24px;border-radius:24px;font-size:0.9rem;font-family:Cairo,sans-serif;text-decoration:none;display:flex;align-items:center;gap:8px;';
+                    btn.innerHTML = '<i class="fas fa-book-open"></i> عرض الفلاير - صفحة ' + info.pageNum;
+                    msgDiv.appendChild(btn);
+
+                    container.appendChild(msgDiv);
+                    container.style.cursor = 'pointer';
+                    container.onclick = function() { window.open(buildFlyerUrl(info.flyerId), '_blank'); };
+                };
+                img.src = directUrl + '?t=' + Date.now(); // cache-bust
             };
 
-            img.onerror = function() {
-                // Step 2: server blocks direct access — show flyer iframe
-                // The iframe loads in browser context so images work
-                container.innerHTML = '';
-                container.style.cssText = 'position:relative;overflow:hidden;background:#000;';
-
-                const label = document.createElement('div');
-                label.style.cssText = 'position:absolute;top:8px;right:8px;z-index:10;background:rgba(0,83,159,0.85);color:white;padding:3px 12px;border-radius:20px;font-size:0.75rem;font-family:Cairo,sans-serif;pointer-events:none;';
-                label.textContent = 'صفحة ' + info.pageNum + ' من الفلاير';
-                container.appendChild(label);
-
-                // Use postMessage approach: load flyer then navigate to page
-                const iframe = document.createElement('iframe');
-                // yabalashoffers supports ?page= or #page= param
-                const iframeSrc = buildFlyerUrl(info.flyerId) + '&page=' + info.pageNum;
-                iframe.src = iframeSrc;
-                iframe.style.cssText = 'width:300%;height:300%;border:none;transform:scale(0.333);transform-origin:top left;pointer-events:none;';
-                iframe.setAttribute('scrolling', 'no');
-                iframe.setAttribute('frameborder', '0');
-
-                const wrapper = document.createElement('div');
-                wrapper.style.cssText = 'width:100%;height:100%;overflow:hidden;position:relative;';
-                wrapper.appendChild(iframe);
-                container.appendChild(wrapper);
-
-                // Add "open full" button
-                const openBtn = document.createElement('a');
-                openBtn.href = buildFlyerUrl(info.flyerId);
-                openBtn.target = '_blank';
-                openBtn.style.cssText = 'position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#00539F;color:white;padding:6px 18px;border-radius:20px;font-size:0.8rem;font-family:Cairo,sans-serif;text-decoration:none;z-index:10;';
-                openBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> عرض الفلاير كاملاً';
-                container.appendChild(openBtn);
+            warmupIframe.onerror = function() {
+                warmupIframe.remove();
+                showImageError(container);
             };
-
-            img.src = directUrl;
         }
 
         function showImageError(container) {
