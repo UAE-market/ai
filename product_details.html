@@ -381,42 +381,10 @@
             }
         }
     </style>
-    <script>
-    // ── Country config ──────────────────────────────────────────────────
-    (function () {
-      var CC = {
-        "eg":  { urlCode:"eg",  englishName:"Egypt",  arabicName:"مصر",       lang:"arabic",  coinEn:"EGP", coinAr:"ج",    symbol:"eg",  catalogPrefix:"",    yabalashC:"eg" },
-        "uae": { urlCode:"uae", englishName:"UAE",    arabicName:"الإمارات",   lang:"english", coinEn:"AED", coinAr:"درهم", symbol:"ae",  catalogPrefix:"uae", yabalashC:"ae" }
-      };
-      try {
-        var host = (window.location.hostname || '').toLowerCase();
-        var path = (window.location.pathname || '').toLowerCase();
-        var fileName = (path.split('/').pop() || '').replace(/\.[a-z0-9]+$/i, '');
-        var seg0 = path.replace(/^\/+/,'').split('/')[0] || '';
-        var detected = null;
-        // Split hostname: 'uae-market.github.io' → ['uae','market','github','io']
-        var hostParts = host.replace(/[-\.]/g, ' ').split(' ');
-        var filenameParts = fileName.split(/[_-]/);
-        var allParts = hostParts.concat([seg0]).concat(filenameParts);
-        Object.keys(CC).forEach(function(k) {
-          if (detected) return;
-          for (var i = 0; i < allParts.length; i++) {
-            if (allParts[i] === k) { detected = k; break; }
-          }
-        });
-        if (!detected) detected = 'eg';
-        window.__COUNTRY = CC[detected];
-        window.__COUNTRIES = CC;
-      } catch(e) {
-        window.__COUNTRY = CC['eg'];
-        window.__COUNTRIES = CC;
-      }
-    })();
-  </script>
-</head>
+  </head>
   <body>
     <div class="split-layout" id="mainContainer">
-      <div class="loading" style="display:none;">جارٍ تحميل البيانات...</div>
+      <div class="loading">جارٍ تحميل البيانات...</div>
     </div>
     <div id="imageModal" class="modal" onclick="handleModalClick(event)">
       <div class="close" onclick="closeModal()">×</div>
@@ -431,21 +399,6 @@
       <div class="modal-page-indicator" id="modalPageIndicator"></div>
     </div>
     <script>
-    // ── Country helpers (global) ──────────────────────────────────────
-    var __C            = window.__COUNTRY || { urlCode:'eg', englishName:'Egypt', arabicName:'مصر', lang:'arabic', coinEn:'EGP', coinAr:'ج', symbol:'eg', catalogPrefix:'', yabalashC:'eg' };
-    var CATALOG_PREFIX = __C.catalogPrefix ? (__C.catalogPrefix + 'catalogs') : 'catalogs';
-    var COIN_EN        = __C.coinEn;
-    var COIN_AR        = __C.coinAr;
-    var YABALA_C       = __C.yabalashC;
-    var COUNTRY        = __C;
-    function buildImageUrl(fid, pnum) {
-        return 'https://www.mobappsbaker.com/' + CATALOG_PREFIX + '/thwr/offers/' + fid + '/' + pnum + '.jpg';
-    }
-    function buildFlyerUrl(fid) {
-        return fid ? ('https://www.yabalashoffers.com/flyer.php?d=' + encodeURIComponent(fid) + '&c=' + YABALA_C) : '#';
-    }
-    // ──────────────────────────────────────────────────────────────────
-
         let productData = null;
         let supermarketData = {};
 
@@ -457,101 +410,95 @@
 
         function renderCroppedImage(container, item) {
             container.innerHTML = '';
-            container.style.cssText = 'position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0b1a2e;border-radius:16px;';
+            const fullImageUrl = getProductImageUrl(item);
 
-            const info = getFlyerInfo(item);
-            if (!info.flyerId) { showImageError(container); return; }
+            if (!fullImageUrl) {
+                container.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;color:white;font-size:1.2rem;">لا توجد صورة</div>';
+                return;
+            }
 
-            const directUrl  = buildImageUrl(info.flyerId, info.pageNum);
-            const flyerUrl   = buildFlyerUrl(info.flyerId);
+            const x = parseFloat(item.X) || parseFloat(item.crop?.x) || 0;
+            const y = parseFloat(item.Y) || parseFloat(item.crop?.y) || 0;
+            const w = parseFloat(item['العرض']) || parseFloat(item.crop?.w) || 0;
+            const h = parseFloat(item['الارتفاع']) || parseFloat(item.crop?.h) || 0;
 
-            const x = parseFloat(item.X)           || (item.crop ? parseFloat(item.crop.x) : 0) || 0;
-            const y = parseFloat(item.Y)           || (item.crop ? parseFloat(item.crop.y) : 0) || 0;
-            const w = parseFloat(item['العرض'])    || (item.crop ? parseFloat(item.crop.w) : 0) || 0;
-            const h = parseFloat(item['الارتفاع']) || (item.crop ? parseFloat(item.crop.h) : 0) || 0;
+            // No crop coords → show full image
+            if (x === 0 && y === 0 && w === 0 && h === 0) {
+                const el = document.createElement('img');
+                el.src = fullImageUrl;
+                el.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,0.3);';
+                container.appendChild(el);
+                return;
+            }
 
-            // Try direct image first (works on local file:// and cached sessions)
-            const testImg = new Image();
-            testImg.onload = function() {
-                container.innerHTML = '';
-                renderWithUrl(container, item, directUrl, x, y, w, h);
+            // Use CSS background-image — works without CORS, no canvas needed
+            const PAD_LEFT   = 0.40;
+            const PAD_RIGHT  = 0.11;
+            const PAD_TOP    = 0.17;
+            const PAD_BOTTOM = 0.05;
+
+            const img = new Image();
+            // NO crossOrigin — mobappsbaker.com blocks CORS requests
+
+            img.onerror = function() {
+                container.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;color:white;font-size:1.2rem;">فشل تحميل الصورة</div>';
             };
-            testImg.onerror = function() {
-                // Server blocks direct access — show inline flyer viewer
-                showFlyerViewer(container, info, flyerUrl);
-            };
-            testImg.src = directUrl;
-        }
 
-        function showFlyerViewer(container, info, flyerUrl) {
-            container.innerHTML = '';
-            container.style.cssText = 'position:relative;overflow:hidden;background:#111827;border-radius:16px;cursor:pointer;';
+            img.onload = function() {
+                const iw = img.naturalWidth;
+                const ih = img.naturalHeight;
 
-            // Full-size clickable area
-            const overlay = document.createElement('div');
-            overlay.style.cssText = 'position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:2;';
+                const lx     = (x <= 1.0) ? x * iw : x;
+                const ty     = (y <= 1.0) ? y * ih : y;
+                const box_w  = (w <= 1.0) ? w * iw : w;
+                const box_h  = (h <= 1.0) ? h * ih : h;
 
-            const pageIcon = document.createElement('div');
-            pageIcon.style.cssText = 'width:64px;height:64px;background:rgba(0,83,159,0.3);border:2px solid rgba(0,83,159,0.6);border-radius:50%;display:flex;align-items:center;justify-content:center;';
-            pageIcon.innerHTML = '<i class="fas fa-book-open" style="font-size:1.8rem;color:#64b5f6;"></i>';
+                const fl = Math.max(0,  lx - iw * PAD_LEFT);
+                const fr = Math.min(iw, lx + box_w + iw * PAD_RIGHT);
+                const ft = Math.max(0,  ty - ih * PAD_TOP);
+                const fb = Math.min(ih, ty + box_h + ih * PAD_BOTTOM);
 
-            const pageLabel = document.createElement('div');
-            pageLabel.style.cssText = 'color:#e0e0e0;font-size:0.9rem;font-family:Cairo,sans-serif;text-align:center;';
-            pageLabel.innerHTML = 'صفحة <strong style="color:#64b5f6;font-size:1.1rem;">' + info.pageNum + '</strong> من الفلاير';
-
-            const openBtn = document.createElement('a');
-            openBtn.href = flyerUrl;
-            openBtn.target = '_blank';
-            openBtn.onclick = function(e) { e.stopPropagation(); };
-            openBtn.style.cssText = 'background:#00539F;color:white;padding:8px 20px;border-radius:24px;font-size:0.85rem;font-family:Cairo,sans-serif;text-decoration:none;display:flex;align-items:center;gap:6px;margin-top:4px;';
-            openBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> فتح الفلاير';
-
-            overlay.appendChild(pageIcon);
-            overlay.appendChild(pageLabel);
-            overlay.appendChild(openBtn);
-            container.appendChild(overlay);
-
-            // Click container to open flyer
-            container.onclick = function() { window.open(flyerUrl, '_blank'); };
-        }
-
-        function showImageError(container) {
-            container.style.background = '#0b1a2e';
-            container.innerHTML = '<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;' +
-                'width:100%;height:100%;color:#888;gap:12px;">' +
-                '<i class="fas fa-image" style="font-size:3rem;opacity:0.3;"></i>' +
-                '<span style="font-size:0.9rem;">الصورة غير متاحة</span></div>';
-        }
-
-        function renderWithUrl(container, item, imageUrl, x, y, w, h) {
-            var tmpImg = new Image();
-            tmpImg.onload = function() {
-                var iw = tmpImg.naturalWidth, ih = tmpImg.naturalHeight;
-                container.innerHTML = '';
-                var PAD_LEFT=0.40, PAD_RIGHT=0.11, PAD_TOP=0.17, PAD_BOTTOM=0.05;
-                var lx=(x<=1)?x*iw:x, ty=(y<=1)?y*ih:y, bw=(w<=1)?w*iw:w, bh=(h<=1)?h*ih:h;
-                var fl=Math.max(0,lx-iw*PAD_LEFT), fr=Math.min(iw,lx+bw+iw*PAD_RIGHT);
-                var ft=Math.max(0,ty-ih*PAD_TOP),   fb=Math.min(ih,ty+bh+ih*PAD_BOTTOM);
-                if (fr<=fl||fb<=ft||(!x&&!y&&!w&&!h)) {
-                    var el=document.createElement('img');
-                    el.src=imageUrl;
-                    el.style.cssText='max-width:100%;max-height:100%;object-fit:contain;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,0.3);';
-                    container.appendChild(el); return;
+                if (fr <= fl || fb <= ft) {
+                    const el = document.createElement('img');
+                    el.src = fullImageUrl;
+                    el.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:16px;';
+                    container.appendChild(el);
+                    return;
                 }
-                var cw=fr-fl, ch=fb-ft;
-                var bsW=(iw/cw)*100, bsH=(ih/ch)*100;
-                var bpX=(iw-cw)>0.5?(fl/(iw-cw))*100:0, bpY=(ih-ch)>0.5?(ft/(ih-ch))*100:0;
-                container.style.cssText+='display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden;';
-                var d=document.createElement('div');
-                d.style.cssText='width:100%;height:100%;max-width:95%;max-height:95%;' +
-                    'background-image:url('+imageUrl+');' +
-                    'background-size:'+bsW.toFixed(1)+'% '+bsH.toFixed(1)+'%;' +
-                    'background-position:'+bpX.toFixed(1)+'% '+bpY.toFixed(1)+'%;' +
-                    'background-repeat:no-repeat;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,0.3);';
-                container.appendChild(d);
+
+                const cw = fr - fl;
+                const ch = fb - ft;
+
+                const bgSizeW = (iw / cw) * 100;
+                const bgSizeH = (ih / ch) * 100;
+                const bgPosX  = (iw - cw) > 0.5 ? (fl / (iw - cw)) * 100 : 0;
+                const bgPosY  = (ih - ch) > 0.5 ? (ft / (ih - ch)) * 100 : 0;
+
+                const cropDiv = document.createElement('div');
+                cropDiv.style.cssText = [
+                    'width:100%',
+                    'height:100%',
+                    'max-width:95%',
+                    'max-height:95%',
+                    `background-image:url('${fullImageUrl}')`,
+                    `background-size:${bgSizeW.toFixed(2)}% ${bgSizeH.toFixed(2)}%`,
+                    `background-position:${bgPosX.toFixed(2)}% ${bgPosY.toFixed(2)}%`,
+                    'background-repeat:no-repeat',
+                    'border-radius:16px',
+                    'box-shadow:0 8px 25px rgba(0,0,0,0.3)'
+                ].join(';');
+
+                container.style.cssText += ';display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden;';
+                container.innerHTML = '';
+                container.appendChild(cropDiv);
+
+                const badge = document.createElement('span');
+                badge.style.cssText = 'position:absolute;bottom:15px;right:15px;background:rgba(0,0,0,0.7);color:#fff;padding:4px 14px;border-radius:20px;font-size:0.8rem;pointer-events:none;z-index:2;';
+                badge.innerHTML = '<i class="fas fa-crop-alt"></i> مقتصصة';
+                container.appendChild(badge);
             };
-            tmpImg.onerror = function(){ showImageError(container); };
-            tmpImg.src = imageUrl;
+
+            img.src = fullImageUrl;
         }
 
         function normalizeProductData(rawData) {
@@ -572,7 +519,7 @@
             if (!data.currentPrice) data.currentPrice = data['السعر الحالي'] || data['current_price'] || data['price'] || 0;
             if (!data.originalPrice) data.originalPrice = data['السعر الأصلي'] || data['original_price'] || data['old_price'] || 0;
             if (!data._discount_pct) data._discount_pct = data['الخصم %'] || data['discount_pct'] || data['discount'] || 0;
-            if (!data.currency) data.currency = data['العملة'] || data['currency'] || COIN_EN;
+            if (!data.currency) data.currency = data['العملة'] || data['currency'] || 'AED';
             if (!data.validUntil) data.validUntil = data['تاريخ انتهاء العرض'] || data['valid_until'] || data['expiry_date'] || 'غير متاح';
             if (!data.supermarket) data.supermarket = data['اسم السوبر ماركت'] || data['supermarket_name'] || 'غير معروف';
             if (!data.pageNo) data.pageNo = data['اسم ملف الفلاير'] || data['page_file'] || '';
@@ -588,18 +535,6 @@
 
         function loadProductFromSession() {
             const stored = sessionStorage.getItem('selectedProduct');
-            // Clear immediately so stale data never shows on back-navigation
-            sessionStorage.removeItem('selectedProduct');
-            sessionStorage.removeItem('selectedProductKey');
-            if (!stored) {
-                document.getElementById('mainContainer').innerHTML =
-                    '<div style="text-align:center;padding:60px;font-family:Cairo,sans-serif;">' +
-                    '<div style="font-size:3rem;margin-bottom:20px;">⚠️</div>' +
-                    '<div style="font-size:1.2rem;color:#555;">لم يتم تحديد منتج.<br>يرجى العودة وتحديد منتج من القائمة.</div>' +
-                    '<button onclick="window.close()" style="margin-top:20px;padding:10px 30px;background:#00539F;color:white;border:none;border-radius:8px;font-family:Cairo,sans-serif;font-size:1rem;cursor:pointer;">إغلاق</button>' +
-                    '</div>';
-                return false;
-            }
             if (!stored) {
                 showError('لم يتم العثور على بيانات المنتج.');
                 return false;
@@ -625,18 +560,7 @@
 
         async function loadSupermarketData() {
             try {
-                // Timeout after 4 seconds — file may not exist on this deployment
-                const controller = new AbortController();
-                const tid = setTimeout(() => controller.abort(), 4000);
-                let response;
-                try {
-                    response = await fetch('supermarkets.xlsx', { signal: controller.signal });
-                } catch(e) {
-                    clearTimeout(tid);
-                    console.warn('supermarkets.xlsx غير موجود أو انتهت المهلة');
-                    return;
-                }
-                clearTimeout(tid);
+                const response = await fetch('supermarkets.xlsx');
                 if (!response.ok) {
                     console.warn('لم يتم العثور على ملف supermarkets.xlsx');
                     return;
@@ -665,14 +589,15 @@
         }
 
         function getProductImageUrl(item) {
-            const info = getFlyerInfo(item);
-            if (info.flyerId && info.pageNum) return buildImageUrl(info.flyerId, info.pageNum);
+            let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
+            let pageNumber = item.pageNo?.match(/page_(\d+)/)?.[1] || '';
+            if (flyerId && pageNumber) return `https://www.mobappsbaker.com/aecatalogs/thwr/offers/${flyerId}/${pageNumber}.jpg`;
             return null;
         }
 
         function getGeneralFlyerUrl(item) {
-            const info = getFlyerInfo(item);
-            if (info.flyerId) return buildImageUrl(info.flyerId, '1');
+            let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
+            if (flyerId) return `https://www.mobappsbaker.com/aecatalogs/thwr/offers/${flyerId}/1.jpg`;
             return null;
         }
 
@@ -725,28 +650,20 @@
 
         // استخرج flyerId و pageNum من productData
         function getFlyerInfo(item) {
-            // flyerId: solution_key is the most reliable (set by index_B transformRows)
-            let flyerId = item.solution_key ||
-                          item['اسم المجلد الفرعي'] ||
-                          item.subFolder || item.folder_id || '';
-            // Remove "flyer_" prefix if present
-            flyerId = String(flyerId).replace(/^flyer_/i, '').trim();
-
-            // pageNum: from pageNo field (e.g. "page_5.jpg" → 5)
-            const pageFile = item.pageNo || item['اسم ملف الفلاير'] || item.page_file || '';
-            let pageNum = parseInt(
-                pageFile.match(/page_(\d+)/)?.[1] ||
-                pageFile.match(/_(\d+)\./)?.[1]  ||
-                pageFile.replace(/[^0-9]/g, '')     ||
-                '1'
-            , 10);
-            if (isNaN(pageNum) || pageNum < 1) pageNum = 1;
-
+            const folder = item['اسم المجلد الفرعي'] || item.subFolder || item.folder_id || '';
+            const pageFile = item['اسم ملف الفلاير'] || item.pageNo || '';
+            // flyerId: من عمود المجلد الفرعي، أو من pageNo (flyer_(\d+))
+            let flyerId = String(folder).trim() ||
+                          (pageFile.match(/flyer_(\d+)/)?.[1]) ||
+                          item.solution_key || '';
+            // pageNum: من اسم ملف الفلاير (page_(\d+)) أو (_(\d+)\.)
+            let pageNum = parseInt(pageFile.match(/page_(\d+)/)?.[1] ||
+                                   pageFile.match(/_(\d+)\./)?.[1] || '1', 10);
             return { flyerId, pageNum };
         }
 
         function buildPageUrl(flyerId, pageNum) {
-            return buildImageUrl(flyerId, pageNum);
+            return `https://www.mobappsbaker.com/aecatalogs/thwr/offers/${flyerId}/${pageNum}.jpg`;
         }
 
         // اكتشاف آخر صفحة في المجلد عبر binary-search بسيط
@@ -860,7 +777,7 @@
                         <div class="product-title">${productData.product}</div>
                     </div>
                     <div class="price-box">
-                        <div><span class="current-price">${productData.currentPrice} ${productData.currency}</span><span class="original-price">${productData.originalPrice} ج.م</span></div>
+                        <div><span class="current-price">${productData.currentPrice} ${productData.currency}</span><span class="original-price">${productData.originalPrice} AED</span></div>
                         <span class="discount-badge">-${productData._discount_pct}%</span>
                     </div>
                     <div class="actions-row">
@@ -884,11 +801,11 @@
                 <div class="flyer-images-row">
                     <div class="flyer-image-box" onclick="openModal('${fullFlyerUrl || ''}', '${flyerInfo.flyerId}', ${flyerInfo.pageNum})">
                         <h4><i class="fas fa-file-image"></i> الصفحة الحالية</h4>
-                        ${fullFlyerUrl ? `<img src="${fullFlyerUrl}" alt="الصفحة الحالية" onerror="this.style.display='none'">` : '<i class="fas fa-image" style="font-size:3rem;color:#ccc"></i><p>لا توجد صورة</p>'}
+                        ${fullFlyerUrl ? `<img src="${fullFlyerUrl}" alt="الصفحة الحالية" onerror="this.src='https://via.placeholder.com/300?text=No+Image'">` : '<i class="fas fa-image" style="font-size:3rem;color:#ccc"></i><p>لا توجد صورة</p>'}
                     </div>
                     <div class="flyer-image-box" onclick="openModal('${generalImageUrl || ''}', '${flyerInfo.flyerId}', 1)">
                         <h4><i class="fas fa-book-open"></i> غلاف الفلاير</h4>
-                        ${generalImageUrl ? `<img src="${generalImageUrl}" alt="غلاف الفلاير" onerror="this.style.display='none'">` : '<i class="fas fa-image" style="font-size:3rem;color:#ccc"></i><p>لا توجد صورة</p>'}
+                        ${generalImageUrl ? `<img src="${generalImageUrl}" alt="غلاف الفلاير" onerror="this.src='https://via.placeholder.com/300?text=No+Cover'">` : '<i class="fas fa-image" style="font-size:3rem;color:#ccc"></i><p>لا توجد صورة</p>'}
                     </div>
                 </div>
                 <button class="back-btn" onclick="window.close()"><i class="fas fa-arrow-right"></i> إغلاق</button>
