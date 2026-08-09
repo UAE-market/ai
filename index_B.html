@@ -2595,9 +2595,6 @@ const item = allData.find(
       
         // 🔍 DEBUG — open Console to see real values
         if (item) {
-            console.log('🔍 pageNo:', JSON.stringify(item.pageNo), 
-                        '| solution_key:', JSON.stringify(item.solution_key),
-                        '| crop:', JSON.stringify(item.crop));
         }
 
         let icon = 'fa-box';
@@ -2767,8 +2764,8 @@ function openWithOverlay(url, flyerFileName, pageNo, flyerIdFromAttr, cropData) 
                     '    <div class="split-layout">',
                     '        <div class="left-side">',
                     '            <div class="flyer-images-row">',
-                    '                <div class="flyer-image-box" onclick="showFull(\'' + imgUrl + '\')"><h4><i class="fas fa-file-image"></i> ' + t('popupCurrentPage') + '</h4><img src="' + imgUrl + '" onerror="this.src=\'https://via.placeholder.com/300?text=No+Image\'"></div>',
-                    '                <div class="flyer-image-box" onclick="showFull(\'' + covUrl + '\')"><h4><i class="fas fa-book-open"></i> ' + t('popupFlyerCover') + '</h4><img src="' + covUrl + '" onerror="this.src=\'https://via.placeholder.com/300?text=No+Cover\'"></div>',
+                    '                <div class="flyer-image-box" onclick="showFull(\'' + imgUrl + '\')"><h4><i class="fas fa-file-image"></i> ' + t('popupCurrentPage') + '</h4><img src="' + imgUrl + '" onerror="this.src=\'https://placehold.co/300x200?text=No+Image\'"></div>',
+                    '                <div class="flyer-image-box" onclick="showFull(\'' + covUrl + '\')"><h4><i class="fas fa-book-open"></i> ' + t('popupFlyerCover') + '</h4><img src="' + covUrl + '" onerror="this.src=\'https://placehold.co/300x200?text=No+Cover\'"></div>',
                     '            </div>',
                     '            <button class="back-btn" onclick="window.close()"><i class="fas fa-arrow-right"></i> ' + t('popupClose') + '</button>',
                     '        </div>',
