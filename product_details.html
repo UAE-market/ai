@@ -381,7 +381,33 @@
             }
         }
     </style>
-  </head>
+    <script>
+    (function() {
+    var __C = window.__COUNTRY || {catalogPrefix:'',yabalashC:'eg',coinEn:'EGP',coinAr:'ج'};
+    var CATALOG = __C.catalogPrefix ? (__C.catalogPrefix + 'catalogs') : 'catalogs';
+    var YABALA_C = __C.yabalashC;
+    var COIN_EN = __C.coinEn;
+    var COIN_AR = __C.coinAr;
+
+      var CC = {
+        "eg":  { catalogPrefix:"",    yabalashC:"eg", coinEn:"EGP", coinAr:"ج",    arabicName:"مصر",      englishName:"Egypt" },
+        "uae": { catalogPrefix:"uae", yabalashC:"ae", coinEn:"AED", coinAr:"درهم", arabicName:"الإمارات", englishName:"UAE"   }
+      };
+      var host  = (window.location.hostname || '').toLowerCase();
+      var path  = (window.location.pathname || '').toLowerCase();
+      var fname = (path.split('/').pop() || '').replace(/\.[a-z0-9]+$/i,'');
+      var parts = host.replace(/[-\.]/g,' ').split(' ')
+                  .concat(path.replace(/^\/+/,'').split('/'))
+                  .concat(fname.split(/[_-]/));
+      var detected = 'eg';
+      Object.keys(CC).forEach(function(k){
+        if (detected !== 'eg') return;
+        for (var i=0;i<parts.length;i++) { if (parts[i]===k){ detected=k; break; } }
+      });
+      window.__COUNTRY = CC[detected];
+    })();
+  </script>
+</head>
   <body>
     <div class="split-layout" id="mainContainer">
       <div class="loading">جارٍ تحميل البيانات...</div>
@@ -591,13 +617,13 @@
         function getProductImageUrl(item) {
             let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
             let pageNumber = item.pageNo?.match(/page_(\d+)/)?.[1] || '';
-            if (flyerId && pageNumber) return `https://www.mobappsbaker.com/aecatalogs/thwr/offers/${flyerId}/${pageNumber}.jpg`;
+            if (flyerId && pageNumber) return `https://www.mobappsbaker.com/${CATALOG}/thwr/offers/${flyerId}/${pageNumber}.jpg`;
             return null;
         }
 
         function getGeneralFlyerUrl(item) {
             let flyerId = item.pageNo?.match(/flyer_(\d+)/)?.[1] || item.solution_key;
-            if (flyerId) return `https://www.mobappsbaker.com/aecatalogs/thwr/offers/${flyerId}/1.jpg`;
+            if (flyerId) return `https://www.mobappsbaker.com/${CATALOG}/thwr/offers/${flyerId}/1.jpg`;
             return null;
         }
 
@@ -663,7 +689,7 @@
         }
 
         function buildPageUrl(flyerId, pageNum) {
-            return `https://www.mobappsbaker.com/aecatalogs/thwr/offers/${flyerId}/${pageNum}.jpg`;
+            return `https://www.mobappsbaker.com/${CATALOG}/thwr/offers/${flyerId}/${pageNum}.jpg`;
         }
 
         // اكتشاف آخر صفحة في المجلد عبر binary-search بسيط
